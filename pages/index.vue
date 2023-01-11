@@ -1,5 +1,8 @@
 <template>
-  <Tutorial/>
+<div>
+  <LayoutsTheHeader />
+  <PartsTopFv/>
+</div>
 </template>
 
 <script>
