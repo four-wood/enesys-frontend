@@ -1,0 +1,35 @@
+@font-face{
+    font-family:'D-DIN-Bold';
+    src:url("/css/D-DIN-Bold.woff");
+}
+
+//media-query
+$pc-m:1366px;
+$tablet:1024px;
+$sp:768px;
+
+// width
+$w-fix:1000px;
+$w-flex:92vw;
+$flex-margin:4vw;
+
+//color
+$bg-color:#fce5e4;
+$black:#333;
+$aqua:#3fa4f0;
+$gray:#f5f5f5;
+$subtle-gray:#f2f2f2;
+$light-aqua:#d9edfc;
+
+//font
+$din:'D-DIN-Bold';
+$h1-size:82px;
+$h2-size:44px;
+$h3-size:28px;
+$p-size:16px;
+
+//space{
+$space:30px;
+
+//animation
+$opacity:0.75;

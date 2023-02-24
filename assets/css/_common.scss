@@ -1,0 +1,110 @@
+@use "./variables" as v;
+@use "./mixin" as mx;
+@use "./extend" as ex;
+
+.section-container {
+  text-align: center;
+}
+
+.section-header {
+  text-align: center;
+}
+
+.sp {
+  display: none;
+
+  @include mx.sp {
+    display: block;
+  }
+}
+
+.pc {
+  @include mx.sp {
+    display: none;
+  }
+}
+
+.motion.delighter {
+  -webkit-transition: all 0.4s ease-out;
+  -o-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
+  opacity: 0;
+  -webkit-transform: translateY(20px);
+  -ms-transform: translateY(20px);
+  transform: translateY(20px);
+}
+
+.motion.delighter.started {
+  opacity: 1;
+  -webkit-transform: translateY(0px);
+  -ms-transform: translateY(0px);
+  transform: translateY(0px);
+}
+
+.motion-slow.delighter {
+  -webkit-transition: all 1s ease-out;
+  -o-transition: all 1s ease-out;
+  transition: all 1s ease-out;
+  opacity: 0;
+  -webkit-transform: translateY(30px);
+  -ms-transform: translateY(30px);
+  transform: translateY(30px);
+}
+
+.motion-slow.delighter.started {
+  opacity: 1;
+  -webkit-transform: translateY(0px);
+  -ms-transform: translateY(0px);
+  transform: translateY(0px);
+}
+
+.btn-container {
+  width: 100%;
+  text-align: right;
+  margin: 20px 0;
+}
+
+.btn {
+  padding: 15px 120px 15px 30px;
+  overflow: hidden;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 16px;
+  background: #00be3a;
+  position: relative;
+  transition: all 0.3s;
+  i {
+    position: absolute;
+    top: 32%;
+    right: 10%;
+    transition: all 0.3s;
+    z-index: 2;
+  }
+  &:before {
+    left: auto;
+    right: 10px;
+    z-index: 2;
+  }
+  &:after {
+    width: 42%;
+    height: 200%;
+    content: "";
+    position: absolute;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    right: 0;
+    top: 0;
+    margin: -5px 0 0 -5px;
+    transform-origin: 0 0;
+    transform: rotate(-20deg);
+    transition: all 0.3s;
+  }
+  &:hover {
+    i {
+      right: 6%;
+    }
+    &:after {
+      width: 24%;
+    }
+  }
+}
