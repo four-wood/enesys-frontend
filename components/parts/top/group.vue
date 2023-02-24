@@ -1,10 +1,9 @@
 <template>
   <section id="yabu-g">
-    <div class="section-header motion" data-delighter="">
-      <div class="header-line"></div>
-      <h3>YABUSHITA Group</h3>
-      <h3>ヤブシタグループ</h3>
-    </div>
+    <PartsCommonSectionHeader class="center">
+      <template v-slot:jp>ヤブシタグループ</template>
+      <template v-slot:en>YABUHSITA GROUP</template>
+    </PartsCommonSectionHeader>
     <div class="yabu-g-container motion" data-delighter="">
       <a
         href="https://www.yabushita-kikai.co.jp/"
@@ -79,6 +78,7 @@
   </section>
 </template>
 <style scoped lang="scss">
+@use "@/assets/css/resources.scss" as *;
 #yabu-g{
   background-color: #fff;
   padding: 60px 0;

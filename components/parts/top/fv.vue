@@ -136,7 +136,6 @@ export default {
 </script>
 <style scoped>
 #fv {
-  margin-top: 106px;
   margin-left: 6.25%;
   height: 100vh;
   max-height: 700px;

@@ -9,10 +9,20 @@
           <img src="~/assets/img/pot.png" alt="Powerd by tepco" class="pc" />
         </div>
         <ul id="main-nav" class="pc">
-          <li id="com-nav"><a href="about">会社情報</a></li>
-          <li id="biz-nav"><a href="business">事業内容</a></li>
-          <li><a href="archives">導入実績</a></li>
-          <li><a href="contact">お問い合わせ</a></li>
+          <li id="com-nav">
+            <a href="about">会社情報</a>
+            <div class="second-nav"></div>
+          </li>
+          <li id="biz-nav">
+            <a href="business">事業内容</a>
+            <div class="second-nav"></div>
+          </li>
+          <li>
+            <a href="contact">お問い合わせ</a>
+          </li>
+          <li class="enesystem-btn">
+            <a href="http://ecomame.biz/yabushita/">えねシステム ログイン</a>
+          </li>
         </ul>
         <div class="sp nav-btn">
           <a class="menu-trigger">
@@ -73,7 +83,6 @@
             <a href=""><li>TOP</li></a>
             <a href="about"><li>会社情報</li></a>
             <a href="business"><li>事業内容</li></a>
-            <a href="archives"><li>導入実績</li></a>
             <a href="contact"><li>お問い合わせ</li></a>
           </ul>
         </div>
@@ -82,16 +91,18 @@
   </header>
 </template>
 <style scoped lang="scss">
+@use "@/assets/css/resources.scss" as *;
 header {
   .header-container {
     position: relative;
+    height: 64px;
     z-index: 100;
     #nav-bar {
-      height: 74px;
+      height: inherit;
       position: fixed;
       width: 100%;
-      top: 32px;
       background-color: #fff;
+      top: 0;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -191,18 +202,12 @@ header {
       transition: 0.3s ease-out;
     }
 
-    #top-logo img:first-child:hover {
-      opacity: 0.8;
-    }
-
     #top-logo img:last-child {
       width: 160px;
     }
 
     #main-nav {
-      position: absolute;
       height: 100%;
-      right: 6vw;
       display: flex;
       justify-content: space-between;
 
@@ -212,20 +217,59 @@ header {
         align-items: center;
         width: 120px;
         transition: 0.3s ease-out;
+        cursor: pointer;
+
 
         a {
-          font-size: 14px;
+          font-size: 16px;
           letter-spacing: 0.5px;
           color: #000;
           font-weight: bold;
           text-align: center;
-          transition: 0.3s ease-out;
+          transition: 0.2s ease-out;
+        }
+        .second-nav {
+          cursor: initial;
+          display: block;
+          opacity: 0;
+          position: absolute;
+          z-index: -1;
+          top: 100%;
+          left: 0;
+          height: 0;
+          width: 100vw;
+          background: white;
+          transition: 0.2s all ease;
         }
 
         &:hover {
-          background-color: #00be3a;
+          background-color: $ene-green;
+          .second-nav {
+            opacity: 1;
+            height: 100px;
+          }
           a {
-            color: #fff;
+            color: white;
+          }
+        }
+      }
+      .enesystem-btn {
+        width: 200px;
+        background-color: white;
+        border: 2px solid $ene-green;
+        cursor: pointer;
+        a {
+          color: $ene-green;
+        }
+        &:hover {
+          background-color: $ene-green;
+
+          .second-nav {
+            opacity: 1;
+            height: 100px;
+          }
+          a {
+            color: white;
           }
         }
       }

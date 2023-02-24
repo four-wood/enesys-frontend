@@ -1,6 +1,5 @@
 <template>
   <div>
-    <LayoutsTheTopBar />
     <LayoutsTheHeader />
     <Nuxt />
     <LayoutsTheFooter />
@@ -17,7 +16,7 @@ export default {
 };
 </script>
 <style lang="scss">
-@use "@/assets/css/resources" as *;
+@use "@/assets/css/_reset" as *;
 body {
   margin: 0;
   .page-enter-active,

@@ -1,17 +1,19 @@
 <template>
   <section id="reason">
-    <div class="section-header motion" data-delighter="">
-      <div class="header-line"></div>
-      <h3>Reason Why</h3>
-      <h3>ヤブシタエネシスが選ばれる理由</h3>
-    </div>
+    <PartsCommonSectionHeader>
+      <template v-slot:jp>ヤブシタエネシスが選ばれる理由</template>
+      <template v-slot:en>REASON WHY</template>
+    </PartsCommonSectionHeader>
     <div class="reason-container motion" data-delighter="">
-      <div class="reason-img reason-1"></div>
+      <div class="reason-img reason-1">
+        <img src="@/assets/img/reason-1.jpg" alt="" />
+      </div>
       <div class="reason-text">
         <div class="reason-text-inner">
           <div class="reason-text-title">
-            <span></span>
-            <h4>電気のことを知り尽くしたプロフェッショナル</h4>
+            <h4>
+              電気のことを知り尽くした<br /><span class="green">プロフェッショナル</span>
+            </h4>
           </div>
           <img alt="powerd by tepco" src="~/assets/img/pot.png" />
           <p class="space">
@@ -21,31 +23,26 @@
             加えて、太陽光発電から照明・空調・電気設備など、電気に関わる総合的なご提案と工事実施の実績があります。
           </p>
           <div class="btn-container">
-            <a class="btn" href="business">
-              <span>事業内容を見る</span><i class="fas fa-angle-right"></i>
-              <div class="transition"></div>
-            </a>
+            <PartsCommonButton :href="'business'" :text="'事業内容を見る'" />
           </div>
         </div>
       </div>
     </div>
     <div class="reason-container motion" data-delighter="">
-      <div class="reason-img reason-2"></div>
-      <div class="reason-text reason-text-2">
+      <div class="reason-img reason-1">
+        <img src="@/assets/img/reason-2.jpg" alt="" />
+      </div>
+      <div class="reason-text">
         <div class="reason-text-inner">
           <div class="reason-text-title">
-            <span></span>
-            <h4>設備工事のヤブシタグループ</h4>
+            <h4>設備工事の<br /><span class="green">ヤブシタグループ</span></h4>
           </div>
-          <img alt="ヤブシタグループ" src="~/assets/img/yabushita-g.png" />
+          <img alt="powerd by tepco" src="~/assets/img/yabushita-g.png" />
           <p class="space">
-            BCP （災害対策）対策のアイテムである V2X
-            やコジェネ、テナントビルや複合施設に対応したクラウド検針システム、高効率設備のハイブリッド給湯器や空調設備、省エネに関連する
-            LED
-            照明や太陽光発電のコンサルテーションと販売・施工をワンストップで行います。
+            BCP（災害対策）対策のアイテムである V2Xやコジェネ、テナントビルや複合施設に対応したクラウド検針システム、高効率設備のハイブリッド給湯器や空調設備、省エネに関連するLED照明や太陽光発電のコンサルテーションと販売・施工をワンストップで行います。
           </p>
           <div class="btn-container">
-            <a class="btn" href="about"><span>会社情報を見る</span><i class="fas fa-angle-right"></i><div class="transition"></div></a>
+            <PartsCommonButton :href="'company'" :text="'会社情報を見る'" />
           </div>
         </div>
       </div>
@@ -53,70 +50,58 @@
   </section>
 </template>
 <style scoped lang="scss">
+@use "@/assets/css/resources.scss" as *;
 #reason {
-  margin: 120px 0 0;
+  margin-top: 80px;
   .reason-container {
     display: flex;
     background-color: white;
+    &:nth-of-type(odd) {
+      flex-direction: row-reverse;
+    }
   }
 
-  .reason-img ,.reason-text{
-    width: 50%;
-    height: 420px;
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
+  .reason-img,
+  .reason-text {
+    width: 100%;
+    min-height: 420px;
+  }
+  .reason-img {
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
   .reason-text {
-    display: flex;
-    align-items: center;
     .btn-container {
-      margin: 0;
-    }
-    h4 {
-      font-family: "Noto Sans JP";
-      font-size: 20px;
-      font-weight: 900;
-      line-height: 30px;
-      padding-left: 12px;
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 30px;
     }
     img {
       width: 200px;
-      margin: 16px 0;
+      margin: 20px 0;
     }
     p {
       line-height: 22px;
       font-size: 16px;
+      letter-spacing: 0.1em;
     }
   }
 }
 
-.reason-1 {
-  background-image: url("@/assets/img/reason-1.jpg");
-}
-
-.reason-2 {
-  background-image: url("@/assets/img/reason-2.jpg");
-  order: 2;
-}
-
 .reason-text-inner {
-  max-width: 640px;
-  width: 100%;
-  padding: 0 40px;
+  padding: 30px;
 }
 
 .reason-text-title {
-  display: flex;
-
-  span {
-    display: block;
-    width: 4px;
-    background-color: #00be3a;
+  border-left: 4px solid $ene-green;
+  padding-left: 14px;
+  h4 {
+    font-size: 32px;
+    line-height: 40px;
+    color: $text-black;
   }
-}
-
-.reason-text-2 {
-  justify-content: end;
 }
 </style>

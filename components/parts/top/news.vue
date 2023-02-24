@@ -1,10 +1,9 @@
 <template>
   <section id="news">
-    <div class="section-header motion" data-delighter="">
-      <div class="header-line"></div>
-      <h3>News</h3>
-      <h3>新着情報</h3>
-    </div>
+    <PartsCommonSectionHeader class="center">
+      <template v-slot:jp>新着情報</template>
+      <template v-slot:en>NEWS</template>
+    </PartsCommonSectionHeader>
     <div class="news-container motion" data-delighter="">
       <table>
         <tbody>

@@ -1,231 +1,135 @@
 <template>
   <section id="business">
-    <div class="section-header motion" data-delighter="">
-      <div class="header-line"></div>
-      <h3>Our Business</h3>
-      <h3>事業内容</h3>
-    </div>
+    <PartsCommonSectionHeader>
+      <template v-slot:jp>省エネ事業</template>
+      <template v-slot:en>ENERGY SAVING</template>
+    </PartsCommonSectionHeader>
     <div class="biz-container">
-      <div class="biz-img motion" data-delighter="">
-        <img class="para" alt="電力販売" src="[img]service-1.jpg" />
-      </div>
-      <div class="biz-text-wrapper motion-slow" data-delighter="">
-        <div
-          class="biz-text-container"
-          onclick="location.href='business/#solar'"
-          type="button"
-        >
-          <div class="biz-text">
-            <div class="biz-text-inner motion-slow" data-delighter="">
-              <p>01.</p>
-              <h3>太陽光発電ソリューション</h3>
-              <p>
-                法人のお客様向けに、自家消費型の太陽光発電システムやPPA契約などお客様に合った設備・料金プランをご提案いたします。
-              </p>
+      <swiper :options="swiperOptions">
+        <swiper-slide v-for="slide in slides" :key="slide.id">
+          <div class="biz-slide-container">
+            <div class="biz-slide-img">
+              <img :src="require('~/assets/img/' + slide.srcUrl)" />
+            </div>
+            <div class="biz-slide-text">
+              <div class="biz-slide-title">
+                <h3>{{ slide.name }}</h3>
+              </div>
+              <p>{{ slide.desc }}</p>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-    <div class="biz-container">
-      <div class="biz-img biz-odd motion" data-delighter="">
-        <img class="para" alt="設備ソリューション" src="[img]service-2.jpg" />
-      </div>
-      <div class="biz-text-wrapper motion-slow" data-delighter="">
-        <div
-          class="biz-text-container-odd"
-          onclick="location.href='business/#solution'"
-          type="button"
-        >
-          <div class="biz-text">
-            <div class="biz-text-inner motion-slow" data-delighter="">
-              <p>02.</p>
-              <h3>設備ソリューション</h3>
-              <p>
-                BCP対策・テナントビル等の運営の効率化、高効率の最新設備、省エネ関連等、幅広く対応します。
-              </p>
-            </div>
-          </div>
-          <div class="biz-arrow">
-            <i class="fas fa-angle-right"></i>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="biz-container">
-      <div class="biz-img motion" data-delighter="">
-        <img class="para" alt="システム" src="[img]service-4.jpg" />
-      </div>
-      <div class="biz-text-wrapper motion-slow" data-delighter="">
-        <div
-          class="biz-text-container"
-          onclick="location.href='business/#system'"
-          type="button"
-        >
-          <div class="biz-text">
-            <div class="biz-text-inner motion-slow" data-delighter="">
-              <p>03.</p>
-              <h3>電力見える化システム</h3>
-              <p>
-                クラウド電力見える化と自動制御を可能にする「えねSYSTEM」を販売しております。
-              </p>
-            </div>
-          </div>
-          <div class="biz-arrow motion" data-delighter="">
-            <i class="fas fa-angle-right"></i>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="biz-container">
-      <div class="biz-img biz-odd motion" data-delighter="">
-        <img class="para" alt="電力販売" src="[img]service-3.jpg" />
-      </div>
-      <div class="biz-text-wrapper motion-slow" data-delighter="">
-        <div
-          class="biz-text-container-odd"
-          onclick="location.href='business/#retail'"
-          type="button"
-        >
-          <div class="biz-text">
-            <div class="biz-text-inner motion-slow" data-delighter="">
-              <p>04.</p>
-              <h3>電力販売事業</h3>
-              <img alt="powerd by tepco" src="[img]pot.png" />
-              <p>電気の品質はそのままで、低価格の電力販売</p>
-            </div>
-          </div>
-          <div class="biz-arrow">
-            <i class="fas fa-angle-right"></i>
-          </div>
-        </div>
-      </div>
+        </swiper-slide>
+      </swiper>
     </div>
   </section>
 </template>
+<script>
+export default {
+  data() {
+    return {
+      nowSlideNum: 0,
+      slides: {
+        solar: {
+          srcUrl: "top_fv_1.jpg",
+          name: "太陽光発電ソリューション事業",
+          desc: "法人のお客様向けに、自家消費型の太陽光発電システムやPPA契約などお客様に合った設備・料金プランをご提案いたします。",
+          query: "solar",
+        },
+        solution: {
+          srcUrl: "top_fv_2.jpg",
+          name: "設備ソリューション事業",
+          desc: "BCP対策・テナントビル等の運営の効率化、高効率の最新設備、省エネ関連等、幅広く対応します。",
+          query: "solution",
+        },
+        system: {
+          srcUrl: "top_fv_4.jpg",
+          name: "電力見える化事業",
+          desc: "クラウド電力見える化と自動制御を可能にする「えねSYSTEM」を販売しております。",
+          query: "system",
+        },
+        retail: {
+          srcUrl: "top_fv_3.jpg",
+          name: "電力販売事業",
+          desc: "電気の品質はそのままで、低価格の電力販売",
+          query: "retail",
+        },
+      },
+      swiperOptions: {
+        loop: true,
+        slidesPerView: 2.5,
+        pagination: {
+          el: ".swiper-pagination",
+          type: "bullets",
+          clickable: false,
+        },
+      },
+    };
+  },
+};
+</script>
 <style scoped lang="scss">
+@use "@/assets/css/resources.scss" as *;
 #business {
   padding: 40px 0;
-  background-color: #f2f2f2;
 }
 
 .biz-container {
   width: 100%;
-  height: 430px;
   display: flex;
-  margin-bottom: 40px;
 }
 
-.biz-img {
-  width: 60%;
+.swiper-container {
+  padding-bottom: 20px;
 }
 
-.biz-img img {
-  width: 100%;
+.swiper-slide {
   height: 100%;
-  object-fit: cover;
-}
-
-.biz-text-wrapper {
-  width: 40%;
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.biz-text-container {
-  width: 36vw;
-  height: 24vw;
-  max-height: 280px;
-  position: absolute;
-  left: -10vw;
-  background-color: #fff;
-  display: flex;
-  justify-content: space-between;
-  box-shadow: 2px 2px 5px #000;
-  cursor: pointer;
-  transition: 0.2s ease;
-}
-
-.biz-odd {
-  order: 2;
-}
-
-.biz-text-container-odd {
-  width: 36vw;
-  height: 24vw;
-  max-height: 280px;
-  position: absolute;
-  left: 14vw;
-  background-color: #fff;
-  display: flex;
-  justify-content: space-between;
-  box-shadow: 2px 2px 5px #000;
-  cursor: pointer;
-  z-index: 10;
-  transition: 0.2s ease;
-}
-
-.biz-text-container:hover,
-.biz-text-container-odd:hover {
-  background-color: #e5f1e8;
-}
-
-.biz-text img {
-  width: 160px;
-  margin-top: 10px;
-}
-
-.biz-text {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 86%;
-}
-
-.biz-text-inner {
-  width: 86%;
-}
-
-.biz-text p {
-  font-size: 16px;
-  line-height: 18px;
-}
-
-.biz-text p:first-of-type {
-  font-size: 14px;
-  color: #b3b3b3;
-  margin-bottom: 10px;
-}
-
-.biz-text h3 {
-  font-size: 26px;
-  font-weight: bold;
-  letter-spacing: 2px;
-  display: inline-block;
-  margin-right: 12px;
-}
-
-.biz-text p:last-of-type {
-  margin-top: 20px;
-}
-
-.biz-arrow {
-  width: 12%;
-  position: relative;
-}
-
-.biz-arrow i {
-  color: #b3b3b3;
-  position: absolute;
-  top: 48%;
-  left: 50%;
-  font-size: 20px;
-  transition: 0.3s ease;
-}
-
-.biz-text-container:hover .biz-arrow i,
-.biz-text-container-odd:hover .biz-arrow i {
-  left: 55%;
+  .biz-slide-container {
+    box-shadow: rgba(black, 0.4) 0 4px 4px 0px;
+    margin: 0 20px;
+    &:hover{
+      .biz-slide-img {
+      img {
+        width: 110%;
+        height: 110%;
+      }
+    }
+    }
+    .biz-slide-img {
+      width: 100%;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+      img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        transition: 0.2s all ease;
+      }
+    }
+    .biz-slide-text {
+      height: 200px;
+      width: 100%;
+      padding: 30px 20px;
+      .biz-slide-title {
+        border-left: 2px solid $ene-green;
+        padding-left: 14px;
+        margin-bottom: 20px;
+        h3 {
+          font-size: 24px;
+          line-height: 28px;
+          color: $text-black;
+        }
+      }
+      p {
+        font-size: 18px;
+        line-height: 1.3em;
+        letter-spacing: 0.08em;
+      }
+    }
+  }
 }
 </style>
