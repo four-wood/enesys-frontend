@@ -138,7 +138,7 @@ export default {
 #fv {
   margin-left: 6.25%;
   height: 100vh;
-  max-height: 700px;
+  max-height: 900px;
   overflow: hidden;
   position: relative;
   display: flex;

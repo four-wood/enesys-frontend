@@ -10,7 +10,7 @@
         </div>
         <ul id="main-nav" class="pc">
           <li id="com-nav">
-            <a href="about">会社情報</a>
+            <nuxt-link to="about">会社情報</nuxt-link>
             <div class="second-nav"></div>
           </li>
           <li id="biz-nav">

@@ -58,13 +58,15 @@
     background-color: white;
     &:nth-of-type(odd) {
       flex-direction: row-reverse;
+      .reason-text-inner{
+        margin-left: auto;
+      }
     }
   }
 
   .reason-img,
   .reason-text {
     width: 100%;
-    min-height: 420px;
   }
   .reason-img {
     img {
@@ -92,7 +94,12 @@
 }
 
 .reason-text-inner {
+  max-width: 600px;
   padding: 30px;
+  @include pc-l{
+    max-width: none;
+    width: 28vw;
+  }
 }
 
 .reason-text-title {
@@ -100,8 +107,11 @@
   padding-left: 14px;
   h4 {
     font-size: 32px;
-    line-height: 40px;
+    line-height: 1.3;
     color: $text-black;
+    @include pc-l{
+      font-size: 2rem;
+    }
   }
 }
 </style>

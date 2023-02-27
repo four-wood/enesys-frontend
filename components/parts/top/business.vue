@@ -97,7 +97,7 @@ export default {
     }
     .biz-slide-img {
       width: 100%;
-      height: 300px;
+      height: 20vw;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -111,23 +111,33 @@ export default {
       }
     }
     .biz-slide-text {
-      height: 200px;
+      height: 240px;
       width: 100%;
       padding: 30px 20px;
+      @include pc-l{
+        height: auto;
+        padding: 2vw;
+      }
       .biz-slide-title {
         border-left: 2px solid $ene-green;
         padding-left: 14px;
         margin-bottom: 20px;
         h3 {
           font-size: 24px;
-          line-height: 28px;
+          line-height: 1.2;
           color: $text-black;
+          @include pc-l{
+            font-size: 1.6rem;
+          }
         }
       }
       p {
         font-size: 18px;
-        line-height: 1.3em;
+        line-height: 1.3;
         letter-spacing: 0.08em;
+        @include pc-l{
+          font-size: 1rem;
+        }
       }
     }
   }
