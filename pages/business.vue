@@ -1,8 +1,6 @@
 <template>
   <div>
     <PartsCommonPageFv :page="'business'" />
-    <PartsAboutMessage />
-    <PartsAboutProfile />
-    <PartsAboutAccess />
+    <PartsBusinessSimulation />
   </div>
 </template>
