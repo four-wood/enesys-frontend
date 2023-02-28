@@ -1,3 +1,8 @@
 <template>
-    <div id="#solar"></div>
+  <div>
+    <PartsCommonPageFv :page="'business'" />
+    <PartsAboutMessage />
+    <PartsAboutProfile />
+    <PartsAboutAccess />
+  </div>
 </template>

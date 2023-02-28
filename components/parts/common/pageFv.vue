@@ -1,16 +1,13 @@
 <template>
   <div id="fv">
     <div class="page-fv-container">
-      <img :src="require('~/assets/img/about.jpg')" />
+      <img :src="require('~/assets/img/' + pageInfo.src)" />
       <div class="page-fv-text">
-        <h2 class="page-title">{{ pagesContents.pageName }}</h2>
-        <p class="page-title-en">{{ pagesContents.pageNameEn }}</p>
+        <h2 class="page-title">{{ pageInfo.pageName }}</h2>
+        <p class="page-title-en">{{ pageInfo.pageNameEn }}</p>
         <ul class="page-content-list-contaienr">
-          <li
-            v-for="pagesContent in pagesContents.content"
-            :key="pagesContent.id"
-          >
-            <a href="">{{ pagesContent["contentName"] }}</a>
+          <li v-for="content in pageInfo.contents" :key="content.id">
+            <a href="">{{ content["contentName"] }}</a>
           </li>
         </ul>
       </div>
@@ -28,7 +25,7 @@ export default {
   },
   data() {
     return {
-      pagesContents: pageMaster.getPage(this.page),
+      pageInfo: pageMaster.getPage(this.page),
     };
   },
 };
@@ -52,7 +49,7 @@ export default {
       object-fit: cover;
     }
     .page-fv-text {
-      padding-left: 40px;
+      padding-left: 12vw;
       .page-title {
         font-size: 32px;
         line-height: 1.3;

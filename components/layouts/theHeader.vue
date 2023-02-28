@@ -3,22 +3,15 @@
     <div class="header-container">
       <div id="nav-bar">
         <div id="top-logo">
-          <a href=""
-            ><img src="~/assets//img/logo.png" alt="ヤブシタエネシス"
-          /></a>
-          <img src="~/assets/img/pot.png" alt="Powerd by tepco" class="pc" />
+          <nuxt-link to="/"><img src="~/assets//img/logo.png" alt="ヤブシタエネシス" /></nuxt-link>
+          <img src="~/assets/img/pot.png" class="pc" alt="Powerd by tepco" />
         </div>
         <ul id="main-nav" class="pc">
-          <li id="com-nav">
-            <nuxt-link to="about">会社情報</nuxt-link>
-            <div class="second-nav"></div>
-          </li>
-          <li id="biz-nav">
-            <a href="business">事業内容</a>
-            <div class="second-nav"></div>
-          </li>
-          <li>
-            <a href="contact">お問い合わせ</a>
+          <li v-for="page in pageInfo" :key="page.id">
+            <nuxt-link :to="page.link">{{page.pageName}}</nuxt-link>
+            <div v-if="page.contents != null" class="second-nav">
+              <a :href="content.link" v-for="content in page.contents" :key="content.id">{{ content.contentName }}</a>
+            </div>
           </li>
           <li class="enesystem-btn">
             <a href="http://ecomame.biz/yabushita/">えねシステム ログイン</a>
@@ -35,8 +28,7 @@
       <div class="nav-hover" id="about-nav-hover">
         <div class="hover-nav-wrapper">
           <ul>
-            <a href="about#top-message"
-              ><li>代表挨拶<i class="fas fa-long-arrow-alt-right"></i></li
+            <a href="about#top-message"><li>代表挨拶<i class="fas fa-long-arrow-alt-right"></i></li
             ></a>
             <a href="about#com"
               ><li>企業概要<i class="fas fa-long-arrow-alt-right"></i></li
@@ -90,6 +82,16 @@
     </div>
   </header>
 </template>
+<script>
+import pageMaster from "~/service/pageMaster";
+export default {
+  data() {
+    return {
+      pageInfo: pageMaster.getAllPage(),
+    };
+  },
+};
+</script>
 <style scoped lang="scss">
 @use "@/assets/css/resources.scss" as *;
 header {
@@ -219,7 +221,6 @@ header {
         transition: 0.3s ease-out;
         cursor: pointer;
 
-
         a {
           font-size: 16px;
           letter-spacing: 0.5px;
@@ -230,7 +231,11 @@ header {
         }
         .second-nav {
           cursor: initial;
-          display: block;
+          visibility: hidden;
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          padding-right: 10%;
           opacity: 0;
           position: absolute;
           z-index: -1;
@@ -240,15 +245,19 @@ header {
           width: 100vw;
           background: white;
           transition: 0.2s all ease;
+          a{
+            margin: 0 20px;
+          }
         }
 
         &:hover {
           background-color: $ene-green;
           .second-nav {
+            visibility: visible;
             opacity: 1;
             height: 100px;
           }
-          a {
+          &>a {
             color: white;
           }
         }

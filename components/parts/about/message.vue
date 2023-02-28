@@ -16,7 +16,7 @@
             <p class="top-name"><span class="small">代表取締役社長　</span>森　忠裕</p>
         </div>
         <div class="message-img-container">
-          <img src="~/assets/img/morimori2.jpg" alt="代表取締役社長　森　忠裕" />
+          <img src="~/assets/img/mori.jpg" alt="代表取締役社長　森　忠裕" />
         </div>
       </div>
     </div>

@@ -11,17 +11,11 @@
       <div class="reason-text">
         <div class="reason-text-inner">
           <div class="reason-text-title">
-            <h4>
-              電気のことを知り尽くした<br /><span class="green">プロフェッショナル</span>
-            </h4>
+            <h4>電気のことを知り尽くした<br /><span class="green">プロフェッショナル</span></h4>
           </div>
           <img alt="powerd by tepco" src="~/assets/img/pot.png" />
-          <p class="space">
-            日本最大手の電力会社である東京電力グループ（東京電力エナジーパートナー株式会社、テプコカスタマーサービス株式会社）と連携し、1,000社以上のお客様の電気代削減に貢献してきました。また、設備機器メーカーとも密に連携しており、お客様に合った最新・最適な設備からお得な料金プランや運用方法をご提案することが可能です。
-          </p>
-          <p class="space">
-            加えて、太陽光発電から照明・空調・電気設備など、電気に関わる総合的なご提案と工事実施の実績があります。
-          </p>
+          <p class="space">日本最大手の電力会社である東京電力グループ（東京電力エナジーパートナー株式会社、テプコカスタマーサービス株式会社）と連携し、1,000社以上のお客様の電気代削減に貢献してきました。また、設備機器メーカーとも密に連携しており、お客様に合った最新・最適な設備からお得な料金プランや運用方法をご提案することが可能です。</p>
+          <p class="space">加えて、太陽光発電から照明・空調・電気設備など、電気に関わる総合的なご提案と工事実施の実績があります。</p>
           <div class="btn-container">
             <PartsCommonButton :href="'business'" :text="'事業内容を見る'" />
           </div>
@@ -38,11 +32,9 @@
             <h4>設備工事の<br /><span class="green">ヤブシタグループ</span></h4>
           </div>
           <img alt="powerd by tepco" src="~/assets/img/yabushita-g.png" />
-          <p class="space">
-            BCP（災害対策）対策のアイテムである V2Xやコジェネ、テナントビルや複合施設に対応したクラウド検針システム、高効率設備のハイブリッド給湯器や空調設備、省エネに関連するLED照明や太陽光発電のコンサルテーションと販売・施工をワンストップで行います。
-          </p>
+          <p class="space">BCP（災害対策）対策のアイテムである V2Xやコジェネ、テナントビルや複合施設に対応したクラウド検針システム、高効率設備のハイブリッド給湯器や空調設備、省エネに関連するLED照明や太陽光発電のコンサルテーションと販売・施工をワンストップで行います。</p>
           <div class="btn-container">
-            <PartsCommonButton :href="'company'" :text="'会社情報を見る'" />
+            <PartsCommonButton :href="'about'" :text="'会社情報を見る'" />
           </div>
         </div>
       </div>

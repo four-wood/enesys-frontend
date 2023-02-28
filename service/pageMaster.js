@@ -4,15 +4,18 @@ const PAGE = {
     pageNameEn: "About Us",
     link: "about",
     src: "about.jpg",
-    content: {
+    contents: {
       topMessage: {
         contentName: "代表挨拶",
+        contentLink: "about",
       },
       companyProfile: {
         contentName: "企業概要",
+        contentLink: "profile",
       },
       access:{
         contentName: "アクセス",
+        contentLink: "access",
       }
     },
   },
@@ -21,22 +24,34 @@ const PAGE = {
     pageNameEn: "Business",
     link: "business",
     src: "business.jpg",
-    content: {
+    contents: {
       solar: {
         contentName: "太陽光ソリューション事業",
+        contentLink: "solar",
       },
       setsubi: {
         contentName: "設備ソリューション事業",
+        contentLink: "setubi",
       },
       visible:{
         contentName: "電力見える化事業",
+        contentLink: "visible",
       }
     },
+  },
+  contact: {
+    pageName: "お問い合わせ",
+    pageNameEn: "Contact",
+    link: "contact",
+    src: "contact.jpg",
   },
 };
 
 export default new (class pagesConfig {
   getPage(id){
     return PAGE[id];
+  }
+  getAllPage(){
+    return PAGE;
   }
 })();
