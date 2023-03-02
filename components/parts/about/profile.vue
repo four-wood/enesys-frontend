@@ -9,7 +9,7 @@
         <tbody>
           <tr>
             <td><p>商号</p></td>
-            <td><p>ヤブシタエネシス</p></td>
+            <td><p>ヤブシタエネシス株式会社</p></td>
           </tr>
           <tr>
             <td><p>所在地</p></td>
@@ -81,7 +81,7 @@
           border-top: 1px solid $gray;
           border-bottom: 1px solid $gray;
           td {
-            padding: 20px 50px;
+            padding: 30px 50px;
             p {
               font-size: 18px;
               line-height: 1.3;

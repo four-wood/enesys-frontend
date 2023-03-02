@@ -47,6 +47,7 @@
   margin-top: 80px;
   .reason-container {
     display: flex;
+    height: 500px;
     background-color: white;
     &:nth-of-type(odd) {
       flex-direction: row-reverse;

@@ -36,6 +36,10 @@ const PAGE = {
       visible:{
         contentName: "電力見える化事業",
         contentLink: "visible",
+      },
+      electricity:{
+        contentName: "電力販売事業",
+        contentLink: "electricity",
       }
     },
   },

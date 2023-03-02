@@ -34,7 +34,7 @@ export default {
 @use "@/assets/css/resources.scss" as *;
 #fv {
   height: 30vw;
-  background: linear-gradient(to right, rgba(black, 0.6), transparent);
+  background: linear-gradient(to right, rgba(black, 0.8), transparent);
   .page-fv-container {
     position: relative;
     height: 100%;
@@ -46,6 +46,8 @@ export default {
     img {
       z-index: -1;
       position: absolute;
+      width: 100%;
+      height: 100%;
       object-fit: cover;
     }
     .page-fv-text {

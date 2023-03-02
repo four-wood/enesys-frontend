@@ -8,8 +8,8 @@
         </div>
         <ul id="main-nav" class="pc">
           <li v-for="page in pageInfo" :key="page.id">
-            <nuxt-link :to="page.link">{{page.pageName}}</nuxt-link>
-            <div v-if="page.contents != null" class="second-nav">
+            <nuxt-link :to="page.link">{{ page.pageName }}</nuxt-link>
+            <div v-if="page.contents != null" class="second-nav" :style="{ background: ' linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(' + require('~/assets/img/' + page.src)+ ') center center' }">
               <a :href="content.link" v-for="content in page.contents" :key="content.id">{{ content.contentName }}</a>
             </div>
           </li>
@@ -25,57 +25,10 @@
           </a>
         </div>
       </div>
-      <div class="nav-hover" id="about-nav-hover">
-        <div class="hover-nav-wrapper">
-          <ul>
-            <a href="about#top-message"><li>代表挨拶<i class="fas fa-long-arrow-alt-right"></i></li
-            ></a>
-            <a href="about#com"
-              ><li>企業概要<i class="fas fa-long-arrow-alt-right"></i></li
-            ></a>
-            <a href="about#com-g"
-              ><li>グループ会社<i class="fas fa-long-arrow-alt-right"></i></li
-            ></a>
-            <a href="about#access"
-              ><li>アクセス<i class="fas fa-long-arrow-alt-right"></i></li
-            ></a>
-          </ul>
-        </div>
-      </div>
-      <div class="nav-hover" id="biz-nav-hover">
-        <div class="hover-nav-wrapper">
-          <ul>
-            <a href="business#solar"
-              ><li>
-                太陽光発電ソリューション<i
-                  class="fas fa-long-arrow-alt-right"
-                ></i></li
-            ></a>
-            <a href="business#solution"
-              ><li>
-                設備ソリューション<i
-                  class="fas fa-long-arrow-alt-right"
-                ></i></li
-            ></a>
-            <a href="business#retail"
-              ><li>電力販売<i class="fas fa-long-arrow-alt-right"></i></li
-            ></a>
-            <a href="business#system"
-              ><li>
-                電力見える化システム<i
-                  class="fas fa-long-arrow-alt-right"
-                ></i></li
-            ></a>
-          </ul>
-        </div>
-      </div>
       <nav class="sp-nav">
         <div class="sp-nav-container">
           <ul>
-            <a href=""><li>TOP</li></a>
-            <a href="about"><li>会社情報</li></a>
-            <a href="business"><li>事業内容</li></a>
-            <a href="contact"><li>お問い合わせ</li></a>
+            <li v-for="page in pageInfo" :key="page.id"><a href="page.link">{{ page.pageName }}</a></li>
           </ul>
         </div>
       </nav>
@@ -246,6 +199,7 @@ header {
           background: white;
           transition: 0.2s all ease;
           a{
+            color: white;
             margin: 0 20px;
           }
         }
