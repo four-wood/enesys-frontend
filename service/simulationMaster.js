@@ -40,6 +40,25 @@ const SIMULATION = {
     solarPanel: "807kW",
     pcs: "850kW",
   },
+  syokuhin: {
+    src:"works.jpg",
+    result: {
+      targetName: "食品加工工場の場合",
+      gererationPerYear: "214,155",
+      cutPerYear: "870",
+      curbonPerYear: "98",
+    },
+    basePrice: "1,820円",
+    energyPrice: "",
+    summer: "18.38円",
+    otherSeasons: "18.24円",
+    fuelAdjustmentCost: "8.24円",
+    greenEnergyInpost: "8.45円",
+    contractDemand: "800kW",
+    consumptionPerYear: "8,415,812kWh",
+    solarPanel: "807kW",
+    pcs: "850kW",
+  },
 };
 
 export default new (class pagesConfig {

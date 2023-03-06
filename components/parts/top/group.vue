@@ -32,7 +32,7 @@
         </swiper>
         <div class="swiper-thumb-container-flex">
           <span class="swiper-button-prev">
-            <PartsCommonCircleChevronLeft />
+            <PartsCommonCircleChevron :direction="'left'" />
           </span>
           <swiper
             :options="swiperThumbs"
@@ -45,8 +45,7 @@
             </swiper-slide>
           </swiper>
           <span class="swiper-button-next"
-            ><PartsCommonCircleChevronRight
-          /></span>
+            ><PartsCommonCircleChevron :direction="'right'" /></span>
         </div>
       </div>
     </div>
