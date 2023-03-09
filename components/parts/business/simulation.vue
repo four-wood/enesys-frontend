@@ -24,21 +24,28 @@
           >
             <div class="board">
               <p class="catch-color">シミュレーション</p>
-              <h4>{{ simulationData.result.targetName }}</h4>
+              <h4>{{ simulationData.result.targetName }}の場合</h4>
               <p>水産加工工場を所有している事業者様が購入型で導入した場合</p>
               <div class="melit">
                 <img class="melit-img" src="~assets/img/icon_good.png" />
                 <div class="melit-text">
                   <p>
-                    年間<span class="bold">214,155</span
+                    年間<span class="bold">{{
+                      simulationData.result.generationPerYear
+                    }}</span
                     ><span>kWh</span>の発電量
                   </p>
                   <p>
-                    電気料金を年間<span class="bold">470</span
+                    電気料金を年間<span class="bold">{{
+                      simulationData.result.cutPerYear
+                    }}</span
                     ><span>万円</span>削減
                   </p>
                   <p>
-                    CO2を年間約<span class="bold">98</span><span>t</span>削減
+                    CO2を年間約<span class="bold">{{
+                      simulationData.result.curbonPerYear
+                    }}</span
+                    ><span>t</span>削減
                   </p>
                 </div>
               </div>
@@ -46,6 +53,111 @@
           </swiper-slide>
         </swiper>
       </div>
+    </div>
+    <div id="data">
+      <swiper
+        :options="swiperThumbsSec"
+        ref="swiperThumbsSec"
+        class="swiperThumbsSec"
+      >
+        <swiper-slide
+          class="group-slide-container"
+          v-for="simulationData in simulationDatas"
+          :key="simulationData.id"
+        >
+          <div class="data-container">
+            <div
+              id="situation"
+              class="motion delighter started"
+              data-delighter=""
+            >
+              <h3>契約種別：{{ simulationData.area }}エリア 高圧電力S</h3>
+              <div class="data-table">
+                <div class="line">
+                  <p>基本料金単価</p>
+                  <span>{{ simulationData.basePrice }}</span>
+                </div>
+
+                <div class="line">
+                  <p>電力量単価</p>
+                  <span></span>
+                </div>
+
+                <div class="line">
+                  <p>夏季</p>
+                  <span>{{ simulationData.summer }}</span>
+                </div>
+
+                <div class="line">
+                  <p>その他季</p>
+                  <span>{{ simulationData.otherSeasons }}</span>
+                </div>
+
+                <div class="line">
+                  <p>燃料調整費単価（円/1kWh）</p>
+                  <span>{{ simulationData.fuelAdjustmentConst }}</span>
+                </div>
+
+                <div class="line">
+                  <p>再エネ賦課金単価（円/1kWh）</p>
+                  <span>{{ simulationData.greenEnergyInpost }}</span>
+                </div>
+
+                <div class="line">
+                  <p>契約電力</p>
+                  <span>{{ simulationData.contractDemand }}</span>
+                </div>
+
+                <div class="line">
+                  <p>年間消費電力量</p>
+                  <span>{{ simulationData.consumptionPerYear }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="data-container">
+            <div
+              id="equipment"
+              class="motion delighter started ended"
+              data-delighter=""
+            >
+              <h3>設備容量</h3>
+              <div class="data-table">
+                <div class="line">
+                  <p>太陽光パネル</p>
+                  <span>{{ simulationData.solarPanel }}</span>
+                </div>
+                <div class="line">
+                  <p>PCS</p>
+                  <span>{{ simulationData.pcs }}</span>
+                </div>
+              </div>
+            </div>
+            <div
+              id="result"
+              class="motion delighter started ended"
+              data-delighter=""
+            >
+              <h3>導入シミュレーション</h3>
+              <div class="data-table">
+                <div class="line">
+                  <p>年間発電電力量</p>
+                  <span>{{ simulationData.generationPerYear }}</span>
+                </div>
+                <div class="line">
+                  <p>年間削減料金</p>
+                  <span>{{ simulationData.cutPerYear }}</span>
+                </div>
+                <div class="line">
+                  <p>年間CO2削減量</p>
+                  <span>{{ simulationData.curbonPerYear }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </swiper-slide>
+      </swiper>
     </div>
   </section>
 </template>
@@ -67,6 +179,12 @@ export default {
       swiperTop: {
         loop: true,
         effect: "fade",
+        allowTouchMove: false,
+      },
+      swiperThumbsSec: {
+        loop: true,
+        effect: "fade",
+        allowTouchMove: false,
       },
     };
   },
@@ -74,8 +192,10 @@ export default {
     this.$nextTick(() => {
       const swiperTop = this.$refs.swiperTop.$swiper;
       const swiperThumbs = this.$refs.swiperThumbs.$swiper;
+      const swiperThumbsSec = this.$refs.swiperThumbsSec.$swiper;
       swiperTop.controller.control = swiperThumbs;
       swiperThumbs.controller.control = swiperTop;
+      swiperTop.controller.control = swiperThumbsSec;
     });
   },
 };
@@ -122,6 +242,7 @@ export default {
 
       .board {
         z-index: 2;
+        max-width: 540px;
         padding: 40px 60px;
         text-align: left;
         margin-right: 0;
@@ -174,6 +295,42 @@ export default {
             .bold {
               font-size: 36px;
               line-height: 52px;
+            }
+          }
+        }
+      }
+    }
+  }
+  #data {
+    max-width: 1000px;
+    margin: 50px  auto;
+    .swiper-slide {
+      display: flex;
+      justify-content: space-between;
+      .data-container {
+        background-color: white;
+        width: 48%;
+        #equipment{
+          margin-bottom: 20px;
+        }
+        .data-table {
+          border-radius: 16px;
+          background-color: #daede0;
+          padding: 0 24px;
+          .line {
+            padding: 16px 0;
+            width: 100%;
+            border-bottom: 1px solid black;
+            display: flex;
+            justify-content: space-between;
+            &:last-of-type{
+              border-bottom: none;
+            }
+            p,
+            span {
+              font-size: 14px;
+              font-family: "Noto Sans JP";
+              font-weight: 700;
             }
           }
         }

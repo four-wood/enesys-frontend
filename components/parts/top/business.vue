@@ -85,15 +85,21 @@ export default {
 .swiper-slide {
   height: 100%;
   .biz-slide-container {
-    box-shadow: rgba(black, 0.4) 0 4px 4px 0px;
     margin: 0 20px;
-    &:hover{
+    &:hover {
       .biz-slide-img {
-      img {
-        width: 110%;
-        height: 110%;
+        img {
+          width: 104%;
+          height: 104%;
+        }
       }
-    }
+      .biz-slide-text {
+        .biz-slide-title {
+          h3 {
+            color: $ene-green;
+          }
+        }
+      }
     }
     .biz-slide-img {
       width: 100%;
@@ -114,7 +120,7 @@ export default {
       height: 240px;
       width: 100%;
       padding: 30px 20px;
-      @include pc-l{
+      @include pc-l {
         height: auto;
         padding: 2vw;
       }
@@ -123,19 +129,21 @@ export default {
         padding-left: 14px;
         margin-bottom: 20px;
         h3 {
-          font-size: 24px;
-          line-height: 1.2;
+          font-size: 20px;
+          line-height: 1.4;
           color: $text-black;
-          @include pc-l{
+          transition: color 0.3s ease;
+
+          @include pc-l {
             font-size: 1.6rem;
           }
         }
       }
       p {
-        font-size: 18px;
+        font-size: 16px;
         line-height: 1.3;
-        letter-spacing: 0.08em;
-        @include pc-l{
+        letter-spacing: 0.1em;
+        @include pc-l {
           font-size: 1rem;
         }
       }

@@ -7,7 +7,7 @@
     <div class="news-container motion" data-delighter="">
       <table>
         <tbody>
-          <PartsCommonAccordion v-for="post in posts" :key="post.id" :content="post.excerpt.rendered">
+          <PartsCommonAccordion v-for="post in posts" :key="post.id" :content="post.content.rendered">
             <template v-slot:date>{{ formatDate(post.date) }}</template>
             <template v-slot:title>{{ post.title.rendered }}</template>
           </PartsCommonAccordion>
@@ -30,7 +30,7 @@ export default {
   },
   mounted() {
     axios
-      .get("https://backend.fw-dev-test.link/wp-json/wp/v2/posts?_fields=date,title,excerpt&per_page=3")
+      .get("https://backend.fw-dev-test.link/wp-json/wp/v2/posts?_fields=date,title,content&per_page=3")
       .then(
         (response) => ((this.posts = response.data), console.log(this.posts))
       );
