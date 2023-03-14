@@ -2,9 +2,31 @@
   <div id="fv">
     <div class="page-fv-container">
       <img :src="require('~/assets/img/' + pageInfo.src)" />
+      <svg
+        class="page-fv-rect"
+        viewBox="-50 -15 57.848872 38.755343"
+        version="1.1"
+        id="svg5"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:svg="http://www.w3.org/2000/svg"
+      >
+        <defs id="defs2" />
+        <g id="layer1" transform="translate(-170.21907,-135.36698)">
+          <path
+            style="fill: #00ff14; fill-opacity: 0.4; stroke: none"
+            d="m 120.21907,159.12232 h 57.84887 v -16.67181 z"
+            id="path6731"
+          />
+          <path
+            style="fill: #00a7ff; fill-opacity: 0.4; stroke: none"
+            d="m 157.53119,159.12232 h 20.53675 v -38.75534 h -10.20409 z"
+            id="path6733"
+          />
+        </g>
+      </svg>
       <div class="page-fv-text">
-        <h2 class="page-title">{{ pageInfo.pageName }}</h2>
         <p class="page-title-en">{{ pageInfo.pageNameEn }}</p>
+        <h2 class="page-title">{{ pageInfo.pageName }}</h2>
         <ul class="page-content-list-contaienr">
           <li v-for="content in pageInfo.contents" :key="content.id">
             <a href="">{{ content["contentName"] }}</a>
@@ -50,8 +72,15 @@ export default {
       height: 100%;
       object-fit: cover;
     }
+    .page-fv-rect {
+      position: absolute;
+      height: 100%;
+      top: 0;
+      right: 0;
+    }
     .page-fv-text {
       padding-left: 12vw;
+      z-index: 2;
       .page-title {
         font-size: 32px;
         line-height: 1.3;
@@ -62,18 +91,22 @@ export default {
         line-height: 1.2;
         font-weight: bold;
         color: $ene-green;
+        margin-bottom: 10px;
       }
       .page-content-list-contaienr {
-        margin-top: 10px;
+        margin-top: 20px;
         display: flex;
         li {
           padding: 0 10px;
           border-right: 1px solid white;
           border-collapse: collapse;
-          a{
+          a {
             color: white;
             font-size: 16px;
             line-height: 1.2;
+          }
+          &:first-of-type{
+            padding-left: 0;
           }
           &:last-of-type {
             border: none;

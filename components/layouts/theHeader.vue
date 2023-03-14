@@ -170,11 +170,11 @@ header {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 120px;
         transition: 0.3s ease-out;
         cursor: pointer;
 
         a {
+          margin: 0 20px;
           font-size: 16px;
           letter-spacing: 0.5px;
           color: #000;
@@ -217,7 +217,6 @@ header {
         }
       }
       .enesystem-btn {
-        width: 200px;
         background-color: white;
         border: 2px solid $ene-green;
         cursor: pointer;

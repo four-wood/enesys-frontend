@@ -1,5 +1,6 @@
 <template>
   <section id="simulation">
+    <PartsCommonBusinessHeading :contentName="'solar'"/>
     <div id="map">
       <PartsCommonJapan />
     </div>
@@ -26,6 +27,7 @@
               <p class="catch-color">シミュレーション</p>
               <h4>{{ simulationData.result.targetName }}の場合</h4>
               <p>水産加工工場を所有している事業者様が購入型で導入した場合</p>
+              <p>※電気料金:104,000,000円/年</p>
               <div class="melit">
                 <img class="melit-img" src="~assets/img/icon_good.png" />
                 <div class="melit-text">
@@ -75,7 +77,10 @@
               <div class="data-table">
                 <div class="line">
                   <p>基本料金単価</p>
-                  <span>{{ simulationData.basePrice }}</span>
+                  <span
+                    >{{ simulationData.basePrice
+                    }}<span style="font-size: 10px">円</span></span
+                  >
                 </div>
 
                 <div class="line">
@@ -84,18 +89,18 @@
                 </div>
 
                 <div class="line">
-                  <p>夏季</p>
+                  <p>　夏季</p>
                   <span>{{ simulationData.summer }}</span>
                 </div>
 
                 <div class="line">
-                  <p>その他季</p>
+                  <p>　その他季</p>
                   <span>{{ simulationData.otherSeasons }}</span>
                 </div>
 
                 <div class="line">
                   <p>燃料調整費単価（円/1kWh）</p>
-                  <span>{{ simulationData.fuelAdjustmentConst }}</span>
+                  <span>{{ simulationData.fuelAdjustmentCost }}</span>
                 </div>
 
                 <div class="line">
@@ -202,6 +207,10 @@ export default {
 </script>
 <style lang="scss" scoped>
 @use "@/assets/css/resources.scss" as *;
+#aabb {
+  background-image: url("@/assets/img/business.jpg");
+  mask-image: url("@/assets/img/businessHeading_bg.svg");
+}
 #simulation {
   #map {
     width: 500px;
@@ -303,14 +312,14 @@ export default {
   }
   #data {
     max-width: 1000px;
-    margin: 50px  auto;
+    margin: 50px auto;
     .swiper-slide {
       display: flex;
       justify-content: space-between;
       .data-container {
         background-color: white;
         width: 48%;
-        #equipment{
+        #equipment {
           margin-bottom: 20px;
         }
         .data-table {
@@ -323,7 +332,7 @@ export default {
             border-bottom: 1px solid black;
             display: flex;
             justify-content: space-between;
-            &:last-of-type{
+            &:last-of-type {
               border-bottom: none;
             }
             p,
