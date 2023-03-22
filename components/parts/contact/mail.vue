@@ -1,14 +1,44 @@
 <template>
   <section id="mail">
     <div class="form-container section-wrapper">
+      <h2 class="form-section-title">01. お問い合わせの種類</h2>
+      <div class="category-selector">
+        <div class="category-container" @click="updateCategory(true)">
+          <span class="category-lamp" :class="{ 'lamp-green': isSolar }"></span>
+          <div class="category-content">
+            <div
+              class="img-cover"
+              :class="{ 'img-cover-selected': !isSolar }"
+            ></div>
+            <img src="~/assets/img/selector_bg_solar.jpg" alt="" />
+            <p :class="{ 'text-gray': !isSolar }">
+              太陽光ソリューション事業<br />に関するお問い合わせ
+            </p>
+          </div>
+        </div>
+        <div class="category-container" @click="updateCategory(false)">
+          <div class="category-content">
+            <div
+              class="img-cover"
+              :class="{ 'img-cover-selected': isSolar }"
+            ></div>
+            <img src="~/assets/img/selector_bg_default.jpg" alt="" />
+            <p :class="{ 'text-gray': isSolar }">その他のお問い合わせ</p>
+          </div>
+          <span
+            class="category-lamp"
+            :class="{ 'lamp-green': !isSolar }"
+          ></span>
+        </div>
+      </div>
       <ValidationObserver v-slot="{ invalid }" ref="observer">
         <form
           class="hyperform"
-          action="https://hyperform.jp/api/CTQvYjp9"
+          :action="action"
           method="post"
           ref="Form"
         >
-          <h2 class="form-section-title">01. お客さま情報</h2>
+          <h2 class="form-section-title">02. お客さま情報</h2>
           <ul class="contact-list">
             <li class="contact-list-item">
               <label class="contact-list-item-label" for="contact-name">
@@ -169,7 +199,7 @@
             </li>
           </ul>
 
-          <h2 class="form-section-title">02. お問い合わせ内容</h2>
+          <h2 class="form-section-title">03. お問い合わせ内容</h2>
           <ul>
             <li class="contact-list-item">
               <label class="contact-list-item-label" for="contact-detail">
@@ -241,6 +271,8 @@
 export default {
   data() {
     return {
+      action: "https://hyperform.jp/api/R7SIHkpZ",
+      isSolar: false,
       title: "",
       detail: "",
       name: "",
@@ -263,6 +295,15 @@ export default {
       var rect = element.getBoundingClientRect();
       var elemtop = rect.top + window.pageYOffset - 100;
       document.documentElement.scrollTop = elemtop;
+    },
+    updateCategory(value) {
+      this.isSolar = value;
+      if(value){
+        this.action="https://hyperform.jp/api/ltPwnhHc";
+      }
+      else{
+        this.action = "https://hyperform.jp/api/R7SIHkpZ";
+      }
     },
   },
 };
@@ -428,7 +469,7 @@ export default {
     text-align: center;
     padding: 24px 20px;
     background-color: white;
-    box-shadow: rgba(black , 0.4) 1px 1px 4px 0px ;
+    box-shadow: rgba(black, 0.4) 1px 1px 4px 0px;
     border-radius: 4px;
     label {
       font-size: 16px;
@@ -442,6 +483,64 @@ export default {
       margin-right: 8px;
       &:hover {
         color: $ene-green;
+      }
+    }
+  }
+}
+.category-selector {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 10px;
+  margin: 40px auto;
+  display: flex;
+  .category-container {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    .category-lamp {
+      height: 100%;
+      width: 20px;
+      background-color: gray;
+    }
+    .lamp-green {
+      background-color: $ene-green;
+    }
+    .category-content {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 0;
+      p {
+        font-size: 24px;
+        font-weight: bold;
+        line-height: 30px;
+        color: white;
+        text-align: center;
+      }
+      .text-gray {
+        color: gray;
+      }
+      .img-cover {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: -1;
+        background-color: rgba(black, 0.4);
+      }
+      .img-cover-selected {
+        backdrop-filter: blur(5px);
+        background-color: rgba(black, 0.8);
+      }
+      img {
+        position: absolute;
+        z-index: -2;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
       }
     }
   }

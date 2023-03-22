@@ -12,7 +12,7 @@
       <a :href="'tel:' + phoneNumber">{{ phoneNumber }}</a>
     </div>
     <p class="phone-text">受付時間：9:00～17:00（土日祝休み）</p>
-    <p>お問い合わせ・ご相談は下記のフォームにご入力後、<span class="fold">プライバシーポリシーに同意して頂き送信ボタンを押してください。</span></p>
+    <p>メールでのお問い合わせ・ご相談は下記のフォームにご入力後、<span class="fold">プライバシーポリシーに同意して頂き送信ボタンを押してください。</span></p>
   </section>
 </template>
 <script>

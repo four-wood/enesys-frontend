@@ -32,7 +32,7 @@ export default {
     axios
       .get("https://backend.fw-dev-test.link/wp-json/wp/v2/posts?_fields=date,title,content&per_page=3")
       .then(
-        (response) => ((this.posts = response.data), console.log(this.posts))
+        (response) => ((this.posts = response.data))
       );
   },
   methods: {

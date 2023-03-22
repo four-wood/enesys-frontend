@@ -2,7 +2,7 @@
   <div class="business-section-heading">
     <div class="business-section-heading-bg">
       <div class="business-title-container">
-        <p>.01</p>
+        <p>{{ content.num }}</p>
         <h3>{{ content.contentName }}</h3>
       </div>
     </div>
@@ -32,6 +32,7 @@ export default {
   width: 88%;
   margin-left: auto;
   position: relative;
+  margin-bottom: 100px;
   .business-section-heading-bg {
     z-index: 1;
     position: absolute;

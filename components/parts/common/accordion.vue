@@ -33,13 +33,6 @@ export default {
       default: "",
     },
   },
-  mounted() {
-    if (this.content != "") {
-      this.hasContent = true;
-      console.log(this.content)
-      this.$refs.content.insertAdjacentHTML('afterbegin',this.content);
-    }
-  },
 };
 </script>
 

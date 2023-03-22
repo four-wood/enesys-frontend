@@ -29,7 +29,7 @@
         <h2 class="page-title">{{ pageInfo.pageName }}</h2>
         <ul class="page-content-list-contaienr">
           <li v-for="content in pageInfo.contents" :key="content.id">
-            <a href="">{{ content["contentName"] }}</a>
+            <nuxt-link :to="pageInfo.link + '#' + content['contentLink']">{{ content["contentName"] }}</nuxt-link>
           </li>
         </ul>
       </div>

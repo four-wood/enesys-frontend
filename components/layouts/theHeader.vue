@@ -8,7 +8,7 @@
         </div>
         <ul id="main-nav" class="pc">
           <li v-for="page in pageInfo" :key="page.id">
-            <nuxt-link :to="page.link">{{ page.pageName }}</nuxt-link>
+            <nuxt-link v-if="page.header" :to="page.link">{{ page.pageName }}</nuxt-link>
             <div v-if="page.contents != null" class="second-nav" :style="{ background: ' linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(' + require('~/assets/img/' + page.src)+ ') center center' }">
               <a :href="content.link" v-for="content in page.contents" :key="content.id">{{ content.contentName }}</a>
             </div>
@@ -56,7 +56,9 @@ header {
       height: inherit;
       position: fixed;
       width: 100%;
-      background-color: #fff;
+      background-color: rgba(white,0.8);
+      backdrop-filter: blur(8px);
+      box-shadow: rgba(black, 0.4) 0px 4px 4px 0;
       top: 0;
       display: flex;
       justify-content: space-between;
@@ -217,7 +219,7 @@ header {
         }
       }
       .enesystem-btn {
-        background-color: white;
+        background-color: rgba(white,0.8);
         border: 2px solid $ene-green;
         cursor: pointer;
         a {
