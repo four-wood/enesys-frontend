@@ -1,36 +1,6 @@
 <template>
   <section id="mail">
     <div class="form-container section-wrapper">
-      <h2 class="form-section-title">01. お問い合わせカテゴリ</h2>
-      <div class="category-selector">
-        <div class="category-container" @click="updateCategory(true)">
-          <span class="category-lamp" :class="{ 'lamp-green': isSolar }"></span>
-          <div class="category-content">
-            <div
-              class="img-cover"
-              :class="{ 'img-cover-selected': !isSolar }"
-            ></div>
-            <img src="~/assets/img/selector_bg_solar.jpg" alt="" />
-            <p :class="{ 'text-gray': !isSolar }">
-              太陽光ソリューション事業<br />に関するお問い合わせ
-            </p>
-          </div>
-        </div>
-        <div class="category-container" @click="updateCategory(false)">
-          <div class="category-content">
-            <div
-              class="img-cover"
-              :class="{ 'img-cover-selected': isSolar }"
-            ></div>
-            <img src="~/assets/img/selector_bg_default.jpg" alt="" />
-            <p :class="{ 'text-gray': isSolar }">その他のお問い合わせ</p>
-          </div>
-          <span
-            class="category-lamp"
-            :class="{ 'lamp-green': !isSolar }"
-          ></span>
-        </div>
-      </div>
       <ValidationObserver v-slot="{ invalid }" ref="observer">
         <form
           class="hyperform"
@@ -295,15 +265,6 @@ export default {
       var rect = element.getBoundingClientRect();
       var elemtop = rect.top + window.pageYOffset - 100;
       document.documentElement.scrollTop = elemtop;
-    },
-    updateCategory(value) {
-      this.isSolar = value;
-      if(value){
-        this.action="https://hyperform.jp/api/ltPwnhHc";
-      }
-      else{
-        this.action = "https://hyperform.jp/api/R7SIHkpZ";
-      }
     },
   },
 };

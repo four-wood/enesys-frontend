@@ -4,7 +4,7 @@
       <template v-slot:jp>ヤブシタエネシスが選ばれる理由</template>
       <template v-slot:en>REASON WHY</template>
     </PartsCommonSectionHeader>
-    <div class="reason-container motion" data-delighter="">
+    <div class="reason-container">
       <div class="reason-img reason-1">
         <img src="@/assets/img/reason-1.jpg" alt="" />
       </div>
@@ -22,7 +22,7 @@
         </div>
       </div>
     </div>
-    <div class="reason-container motion" data-delighter="">
+    <div class="reason-container">
       <div class="reason-img reason-1">
         <img src="@/assets/img/reason-2.jpg" alt="" />
       </div>
@@ -102,9 +102,6 @@
     font-size: 32px;
     line-height: 1.3;
     color: $text-black;
-    @include pc-l{
-      font-size: 2rem;
-    }
   }
 }
 </style>

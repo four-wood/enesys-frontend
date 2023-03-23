@@ -33,6 +33,13 @@ export default {
       default: "",
     },
   },
+  mounted() {
+    if (this.content != "") {
+      this.hasContent = true;
+      console.log(this.content)
+      this.$refs.content.insertAdjacentHTML('beforeend',this.content);
+    }
+  },
 };
 </script>
 

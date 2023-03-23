@@ -1,7 +1,7 @@
 <template>
   <section id="system">
     <PartsCommonBusinessHeading :contentName="'system'" />
-    <div class="enesystem-flex">
+    <div class="enesystem-flex section-wrapper">
       <div class="text-container">
         <div class="title">
           自動制御も可能な<span class="green">見える化システム</span>
@@ -64,9 +64,10 @@
 #system {
   .enesystem-flex {
     display: flex;
+    margin-bottom: 60px;
     .text-container {
       width: 50%;
-      padding: 10%;
+      padding: 40px 0 40px 40px;
       .title {
         font-size: 24px;
         font-weight: bold;

@@ -1,5 +1,5 @@
 <template>
-  <section id="business">
+  <section id="business" class="section-wrapper">
     <PartsCommonSectionHeader>
       <template v-slot:jp>省エネ事業</template>
       <template v-slot:en>ENERGY SAVING</template>
@@ -103,6 +103,7 @@ export default {
     }
     .biz-slide-img {
       width: 100%;
+      max-height: 300px;
       height: 20vw;
       display: flex;
       align-items: center;
@@ -113,6 +114,7 @@ export default {
         position: absolute;
         width: 100%;
         height: 100%;
+        object-fit: cover;
         transition: 0.2s all ease;
       }
     }
@@ -133,19 +135,12 @@ export default {
           line-height: 1.4;
           color: $text-black;
           transition: color 0.3s ease;
-
-          @include pc-l {
-            font-size: 1.6rem;
-          }
         }
       }
       p {
         font-size: 16px;
         line-height: 1.3;
         letter-spacing: 0.1em;
-        @include pc-l {
-          font-size: 1rem;
-        }
       }
     }
   }

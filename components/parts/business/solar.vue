@@ -4,8 +4,7 @@
     <section id="desc">
       <div class="env-flex delighter started ended" data-delighter="">
         <div
-          class="env-flex-content motion delighter started ended"
-          data-delighter=""
+          class="env-flex-content"
         >
           <h4>電気は買うよりつくって・つかうがお得です。</h4>
           <p>
@@ -16,22 +15,19 @@
           </p>
         </div>
         <div
-          class="env-flex-content motion delighter started ended"
-          data-delighter=""
+          class="env-flex-content "
         >
           <img decoding="async" src="~/assets/img/installed_solar.jpg" alt="" />
         </div>
       </div>
       <div class="env-flex delighter started ended" data-delighter="">
         <div
-          class="env-flex-content motion delighter started ended"
-          data-delighter=""
+          class="env-flex-content"
         >
           <img decoding="async" src="~/assets/img/graph_fuel.jpg" alt="" />
         </div>
         <div
-          class="env-flex-content motion delighter started ended"
-          data-delighter=""
+          class="env-flex-content"
         >
           <h4>太陽光発電がお得な理由<span>１</span></h4>
           <h3>電力会社の電気代が毎月上昇しています</h3>
@@ -46,8 +42,7 @@
 
       <div class="env-flex delighter started" data-delighter="">
         <div
-          class="env-flex-content motion delighter started"
-          data-delighter=""
+          class="env-flex-content"
         >
           <h4>太陽光発電がお得な理由<span>２</span></h4>
           <h3>再エネ拡大の負担が増えています</h3>
@@ -58,15 +53,15 @@
             日本として今後も再生エネルギーの促進を加速していく方針なので、今後も再エネ賦課金は上昇し続ける見込みです。
           </p>
         </div>
-        <div class="env-flex-content motion delighter started">
+        <div class="env-flex-content">
           <img decoding="async" src="~/assets/img/graph_energy.jpg" alt="" />
         </div>
       </div>
       <div class="env-flex delighter" data-delighter="">
-        <div class="env-flex-content motion delighter" data-delighter="">
+        <div class="env-flex-content" data-delighter="">
           <img src="~/assets/img/graph_goal.jpg" />
         </div>
-        <div class="env-flex-content motion delighter" data-delighter="">
+        <div class="env-flex-content">
           <h4>太陽光発電がお得な理由<span>３</span></h4>
           <h3>日本も再エネ拡大に舵をきっています</h3>
           <p>
@@ -135,8 +130,6 @@
             <div class="data-container">
               <div
                 id="situation"
-                class="motion delighter started"
-                data-delighter=""
               >
                 <h3>契約種別：{{ simulationData.area }}エリア 高圧電力S</h3>
                 <div class="data-table">
@@ -186,8 +179,6 @@
             <div class="data-container">
               <div
                 id="equipment"
-                class="motion delighter started ended"
-                data-delighter=""
               >
                 <h3>設備容量</h3>
                 <div class="data-table">
@@ -203,8 +194,6 @@
               </div>
               <div
                 id="result"
-                class="motion delighter started ended"
-                data-delighter=""
               >
                 <h3>導入シミュレーション</h3>
                 <div class="data-table">

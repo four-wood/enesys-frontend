@@ -4,7 +4,7 @@
       <template v-slot:jp>新着情報</template>
       <template v-slot:en>NEWS</template>
     </PartsCommonSectionHeader>
-    <div class="news-container motion" data-delighter="">
+    <div class="news-container">
       <table>
         <tbody>
           <PartsCommonAccordion v-for="post in posts" :key="post.id" :content="post.content.rendered">
