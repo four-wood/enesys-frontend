@@ -29,7 +29,7 @@
         <h2 class="page-title">{{ pageInfo.pageName }}</h2>
         <ul class="page-content-list-contaienr">
           <li v-for="content in pageInfo.contents" :key="content.id">
-            <nuxt-link :to="pageInfo.link + '#' + content['contentLink']">{{ content["contentName"] }}</nuxt-link>
+            <nuxt-link :to="'/' + pageInfo.link + '#' + content['contentLink']">{{ content["contentName"] }}</nuxt-link>
           </li>
         </ul>
       </div>
@@ -57,6 +57,9 @@ export default {
 #fv {
   height: 30vw;
   background: linear-gradient(to right, rgba(black, 0.8), transparent);
+  @include sp{
+    height: 45vw;
+  }
   .page-fv-container {
     position: relative;
     height: 100%;
@@ -81,10 +84,16 @@ export default {
     .page-fv-text {
       padding-left: 12vw;
       z-index: 2;
+      @include sp{
+        padding-left: 8vw;
+      }
       .page-title {
         font-size: 32px;
         line-height: 1.3;
         color: white;
+        @include sp{
+          font-size: 24px;
+        }
       }
       .page-title-en {
         font-size: 20px;
@@ -92,10 +101,16 @@ export default {
         font-weight: bold;
         color: $ene-green;
         margin-bottom: 10px;
+        @include sp{
+          font-size: 16px;
+        }
       }
       .page-content-list-contaienr {
         margin-top: 20px;
         display: flex;
+        @include sp{
+          display: none;
+        }
         li {
           padding: 0 10px;
           border-right: 1px solid white;

@@ -819,7 +819,6 @@ export default {
 
 @media screen and (max-width: 768px) {
   #fv {
-    margin-top: 106px;
     height: 67vw;
     width: 100%;
     margin-left: 0;

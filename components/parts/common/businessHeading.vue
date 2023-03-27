@@ -33,6 +33,13 @@ export default {
   margin-left: auto;
   position: relative;
   margin-bottom: 100px;
+  @include tablet{
+    height: 30vw;
+  }
+  @include sp{
+    height: 40vw;
+    margin-bottom: 60px;
+  }
   .business-section-heading-bg {
     z-index: 1;
     position: absolute;
@@ -44,16 +51,34 @@ export default {
     justify-content: flex-end;
     align-items: flex-end;
     padding: 100px;
+    @include tablet{
+      padding: 6vw;
+    }
+    @include sp{
+      padding: 3vw;
+    }
     .business-title-container {
       p {
         color: $ene-green;
         font-size: 48px;
         margin-bottom: 20px;
+        @include tablet{
+          font-size: 36px;
+        }
+        @include sp{
+          font-size: 24px;
+        }
       }
       h3 {
         color: white;
         font-weight: normal;
         font-size: 40px;
+        @include tablet{
+          font-size: 28px;
+        }
+        @include sp{
+          font-size: 20px;
+        }
       }
     }
   }

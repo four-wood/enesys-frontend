@@ -75,11 +75,17 @@
       &:last-of-type {
         border-bottom: 1px solid $gray;
       }
+      @include sp{
+        flex-direction: column;
+      }
       .map-container,
       .info-container {
         padding: 30px;
         width: 100%;
         height: 100%;
+        @include sp{
+          padding: 4vw;
+        }
       }
       .map-container {
         iframe {
@@ -91,10 +97,17 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        @include sp{
+          height: auto;
+        }
         p {
           font-weight: bold;
           font-size: 20px;
+          line-height: 1.2;
           margin-bottom: 20px;
+          @include sp{
+            font-size: 16px;
+          }
         }
       }
     }

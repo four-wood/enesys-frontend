@@ -89,7 +89,7 @@ const PAGE = {
       energy: {
         num: ".04",
         contentName: "電力販売事業",
-        contentLink: "electricity",
+        contentLink: "energy",
         contentImg: "solar.jpg",
       },
     },

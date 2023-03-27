@@ -4,10 +4,10 @@
     <div class="enesystem-flex section-wrapper">
       <div class="text-container">
         <div class="title">
-          自動制御も可能な<span class="green">見える化システム</span>
+          自動制御も可能な<span class="fold green">見える化システム</span>
         </div>
         <div class="text">
-          デマンドに合わせた制御や温湿度センサーと連動した制御などが可能なクラウド電力見える化システム「えねシステム」を販売・サービス提供しております。
+          デマンドに合わせた制御や温湿度センサーと連動した制御などが可能なクラウド電力見える化システム<span class="green">「えねシステム」</span>を販売・サービス提供しております。
         </div>
         <div class="enesystem-logo-container">
           <PartsCommonEnesystem />
@@ -17,7 +17,7 @@
         <img src="~/assets/img/enesystem.png" alt="" />
       </div>
     </div>
-    <div class="control">
+    <div class="control" >
       <PartsCommonSectionHeader class="center">
         <template v-slot:jp>自動制御例</template>
         <template v-slot:en>Automatic Control</template>
@@ -65,11 +65,20 @@
   .enesystem-flex {
     display: flex;
     margin-bottom: 60px;
+    @include sp{
+      flex-direction: column-reverse;
+    }
     .text-container {
       width: 50%;
       padding: 40px 0 40px 40px;
+      @include sp{
+        width: 100%;
+        text-align: center;
+        padding: 2vw 8vw;
+      }
       .title {
         font-size: 24px;
+        line-height: 1.4em;
         font-weight: bold;
         margin-bottom: 20px;
       }
@@ -85,6 +94,11 @@
     .img-container {
       width: 50%;
       padding-left: 20px;
+      @include sp{
+        width: 100%;
+        padding: 4vw 8vw;
+        text-align: center;
+      }
       img {
         width: 80%;
         height: 100%;
@@ -93,6 +107,7 @@
     }
   }
   .control {
+    padding: 0 4vw;
     .control-container {
       margin-top: 80px;
       .control-flex {
@@ -100,15 +115,30 @@
         justify-content: center;
         gap: 80px;
         height: 350px;
+        @include sp{
+          gap: 10vw;
+          flex-direction: column;
+          height: auto;
+          margin-bottom: 40px;
+        }
         .ex {
           width: 350px;
+          @include sp{
+            width: 100%;
+          }
           img {
             width: 100%;
+            @include sp{
+              padding: 2vw 6vw;
+            }
           }
           h4 {
             text-align: center;
             font-size: 20px;
             margin: 20px 0;
+            @include sp{
+              margin: 10px 0;
+            }
             .small {
               font-size: 14px;
             }

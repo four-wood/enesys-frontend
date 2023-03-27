@@ -12,7 +12,7 @@
       <a :href="'tel:' + phoneNumber">{{ phoneNumber }}</a>
     </div>
     <p class="phone-text">受付時間：9:00～17:00（土日祝休み）</p>
-    <p>メールでのお問い合わせ・ご相談は下記のフォームにご入力後、<span class="fold">プライバシーポリシーに同意して頂き送信ボタンを押してください。</span></p>
+    <p>メールでのお問い合わせ・ご相談は下記のフォームにご入力後、<span class="fold">プライバシーポリシーに同意して頂き</span><span class="fold">送信ボタンを押してください。</span></p>
   </section>
 </template>
 <script>
@@ -28,12 +28,23 @@ export default {
 <style scoped lang="scss">
 @use "@/assets/css/resources.scss" as *;
 #phone {
+  @include sp{
+    width: 96%;
+    margin-left: auto;
+    margin-right: auto;
+  }
   p {
     font-size: 20px;
-    line-height: 28px;
+    line-height: 1.4;
     font-weight: bold;
     color: $text-black;
     text-align: center;
+    @include sp{
+      font-size: 15px;
+    }
+  }
+  .phone-text{
+    margin-bottom: 20px;
   }
   .phone-number-container {
     margin: 40px 0 60px;
@@ -48,6 +59,9 @@ export default {
       color: $ene-green;
       font-weight: bold;
       font-size: 40px;
+      @include sp{
+        font-size: 28px;
+      }
     }
   }
 }

@@ -43,7 +43,7 @@
 </template>
 <style lang="scss" scoped>
 #policy {
-  width: 80%;
+  width: 88%;
   margin: 100px auto;
   p {
     font-size: 18px;

@@ -51,6 +51,9 @@ export default {
   .news-container {
     width: 64vw;
     margin: 0 auto;
+    @include sp{
+      width: 96vw;
+    }
     table {
       width: 100%;
     }

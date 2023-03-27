@@ -56,11 +56,16 @@ export default {
       },
       swiperOptions: {
         loop: true,
-        slidesPerView: 2.5,
+        slidesPerView: 1.2,
         pagination: {
           el: ".swiper-pagination",
           type: "bullets",
           clickable: false,
+        },
+        breakpoints: {
+          768: {
+            slidesPerView: 2.5,
+          },
         },
       },
     };
@@ -86,11 +91,13 @@ export default {
   height: 100%;
   .biz-slide-container {
     margin: 0 20px;
+    @include sp{
+      margin: 10px;
+    }
     &:hover {
       .biz-slide-img {
         img {
-          width: 104%;
-          height: 104%;
+          transform: scale(1.05);
         }
       }
       .biz-slide-text {
@@ -110,6 +117,10 @@ export default {
       justify-content: center;
       overflow: hidden;
       position: relative;
+      @include sp {
+        max-height: none;
+        height: 50vw;
+      }
       img {
         position: absolute;
         width: 100%;
@@ -121,10 +132,9 @@ export default {
     .biz-slide-text {
       height: 240px;
       width: 100%;
-      padding: 30px 20px;
+      padding: 20px 0;
       @include pc-l {
         height: auto;
-        padding: 2vw;
       }
       .biz-slide-title {
         border-left: 2px solid $ene-green;

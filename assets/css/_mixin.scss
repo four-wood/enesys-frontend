@@ -16,6 +16,12 @@
     }
 }
 
+@mixin pc-m{
+    @media only screen and (max-width:$pc-m){
+        @content;
+    }
+}
+
 @mixin tablet{
     @media only screen and (max-width:$tablet){
         @content;

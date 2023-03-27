@@ -28,18 +28,31 @@
 #message {
   .message-flex {
     display: flex;
+    @include sp{
+      flex-direction: column-reverse;
+    }
     .message-text-container {
       width: 60%;
       max-width: 600px;
-      padding: 0 2vw;
+      padding: 0 20px;
       margin-left: auto;
+      @include sp{
+        max-width: none;
+        width: 100%;
+      }
       .message-title{
         font-size: 24px;
         line-height: 1.2;
+        @include sp{
+          font-size: 20px;
+        }
       }
       .message-content{
         font-size: 18px;
         line-height: 1.2;
+        @include sp{
+          font-size: 16px;
+        }
       }
       .top-name{
         text-align: right;
@@ -54,8 +67,14 @@
     .message-img-container {
       width: 40%;
       margin-right: auto;
-      padding: 0 2vw;
+      padding: 0 20px;
       max-width: 480px;
+      @include sp{
+        width: 100%;
+        max-width: none;
+        padding: 10vw;
+        padding-top: 20px;
+      }
       img {
         width: 100%;
       }

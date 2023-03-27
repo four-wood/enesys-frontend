@@ -36,7 +36,6 @@ export default {
   },
   methods: {
     updateShowAnswer() {
-      console.log("押下");
       this.isOpen = !this.isOpen;
     },
   },

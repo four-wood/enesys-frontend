@@ -3,9 +3,7 @@
     <PartsCommonBusinessHeading :contentName="'solar'" />
     <section id="desc">
       <div class="env-flex delighter started ended" data-delighter="">
-        <div
-          class="env-flex-content"
-        >
+        <div class="env-flex-content">
           <h4>電気は買うよりつくって・つかうがお得です。</h4>
           <p>
             燃料代の高騰や再エネ構成比率拡大により、今後も電気代は継続的な値上がりが予想されています。
@@ -14,21 +12,15 @@
             これからの電気代高騰時代に向けて、価格変動の影響を受けない自家消費型の太陽光発電システムで電気代の削減をしませんか？
           </p>
         </div>
-        <div
-          class="env-flex-content "
-        >
+        <div class="env-flex-content">
           <img decoding="async" src="~/assets/img/installed_solar.jpg" alt="" />
         </div>
       </div>
       <div class="env-flex delighter started ended" data-delighter="">
-        <div
-          class="env-flex-content"
-        >
+        <div class="env-flex-content">
           <img decoding="async" src="~/assets/img/graph_fuel.jpg" alt="" />
         </div>
-        <div
-          class="env-flex-content"
-        >
+        <div class="env-flex-content">
           <h4>太陽光発電がお得な理由<span>１</span></h4>
           <h3>電力会社の電気代が毎月上昇しています</h3>
           <p>
@@ -41,9 +33,7 @@
       </div>
 
       <div class="env-flex delighter started" data-delighter="">
-        <div
-          class="env-flex-content"
-        >
+        <div class="env-flex-content">
           <h4>太陽光発電がお得な理由<span>２</span></h4>
           <h3>再エネ拡大の負担が増えています</h3>
           <p>
@@ -93,7 +83,6 @@
             ref="swiperThumbs"
             class="swiperThumbs"
           >
-            <div class="swiper-pagination" slot="pagination"></div>
             <swiper-slide
               v-for="simulationData in simulationDatas"
               :key="simulationData.id"
@@ -106,9 +95,24 @@
                 <div class="melit">
                   <img class="melit-img" src="~assets/img/icon_good.png" />
                   <div class="melit-text">
-                    <p>年間<span class="bold">{{ simulationData.result.generationPerYear }}</span><span>kWh</span>の発電量</p>
-                    <p>電気料金を年間<span class="bold">{{ simulationData.result.cutPerYear }}</span><span>万円</span>削減</p>
-                    <p>CO2を年間約<span class="bold">{{ simulationData.result.curbonPerYear }}</span><span>t</span>削減</p>
+                    <p>
+                      年間<span class="bold">{{
+                        simulationData.result.generationPerYear
+                      }}</span
+                      ><span>kWh</span>の発電量
+                    </p>
+                    <p>
+                      電気料金を年間<span class="bold">{{
+                        simulationData.result.cutPerYear
+                      }}</span
+                      ><span>万円</span>削減
+                    </p>
+                    <p>
+                      CO2を年間約<span class="bold">{{
+                        simulationData.result.curbonPerYear
+                      }}</span
+                      ><span>t</span>削減
+                    </p>
                   </div>
                 </div>
               </div>
@@ -128,14 +132,15 @@
             :key="simulationData.id"
           >
             <div class="data-container">
-              <div
-                id="situation"
-              >
+              <div id="situation">
                 <h3>契約種別：{{ simulationData.area }}エリア 高圧電力S</h3>
                 <div class="data-table">
                   <div class="line">
                     <p>基本料金単価</p>
-                    <span>{{ simulationData.basePrice }}<span class="yen">円</span></span>
+                    <span
+                      >{{ simulationData.basePrice
+                      }}<span class="yen">円</span></span
+                    >
                   </div>
 
                   <div class="line">
@@ -145,22 +150,34 @@
 
                   <div class="line">
                     <p>　夏季</p>
-                    <span>{{ simulationData.summer }}<span class="yen">円</span></span>
+                    <span
+                      >{{ simulationData.summer
+                      }}<span class="yen">円</span></span
+                    >
                   </div>
 
                   <div class="line">
                     <p>　その他季</p>
-                    <span>{{ simulationData.otherSeasons }}<span class="yen">円</span></span>
+                    <span
+                      >{{ simulationData.otherSeasons
+                      }}<span class="yen">円</span></span
+                    >
                   </div>
 
                   <div class="line">
                     <p>燃料調整費単価（円/1kWh）</p>
-                    <span>{{ simulationData.fuelAdjustmentCost }}<span class="yen">円</span></span>
+                    <span
+                      >{{ simulationData.fuelAdjustmentCost
+                      }}<span class="yen">円</span></span
+                    >
                   </div>
 
                   <div class="line">
                     <p>再エネ賦課金単価（円/1kWh）</p>
-                    <span>{{ simulationData.greenEnergyInpost }}<span class="yen">円</span></span>
+                    <span
+                      >{{ simulationData.greenEnergyInpost
+                      }}<span class="yen">円</span></span
+                    >
                   </div>
 
                   <div class="line">
@@ -177,9 +194,7 @@
             </div>
 
             <div class="data-container">
-              <div
-                id="equipment"
-              >
+              <div id="equipment">
                 <h3>設備容量</h3>
                 <div class="data-table">
                   <div class="line">
@@ -192,9 +207,7 @@
                   </div>
                 </div>
               </div>
-              <div
-                id="result"
-              >
+              <div id="result">
                 <h3>導入シミュレーション</h3>
                 <div class="data-table">
                   <div class="line">
@@ -203,7 +216,10 @@
                   </div>
                   <div class="line">
                     <p>年間削減料金</p>
-                    <span>{{ simulationData.cutPerYear }}<span class="yen">円</span></span>
+                    <span
+                      >{{ simulationData.cutPerYear
+                      }}<span class="yen">円</span></span
+                    >
                   </div>
                   <div class="line">
                     <p>年間CO2削減量</p>
@@ -230,10 +246,6 @@ export default {
       swiperThumbs: {
         loop: true,
         slidesPerView: 1,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
         slideToClickedSlide: true,
       },
       swiperTop: {
@@ -292,18 +304,16 @@ export default {
   color: #fff;
   position: relative;
   overflow: hidden;
-}
-
-.biz-nav-btn:hover .page-btn-overlay {
-  left: -35%;
-}
-
-.biz-nav-btn h2 {
-  position: absolute;
-  bottom: 8%;
-  left: 8%;
-  font-size: 16px;
-  font-weight: bold;
+  &:hover .page-btn-overlay {
+    left: -35%;
+  }
+  h2 {
+    position: absolute;
+    bottom: 8%;
+    left: 8%;
+    font-size: 16px;
+    font-weight: bold;
+  }
 }
 
 #solar {
@@ -315,34 +325,27 @@ export default {
 
 #biz-message {
   position: relative;
+  p {
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 3px;
+    font-size: 22px;
+    white-space: nowrap;
+    .wrap-delimiter {
+      display: none;
+    }
+  }
 }
 
 .biz-message-container {
   position: absolute;
   top: -220px;
   width: 100%;
-}
-.biz-message-container p {
-  max-width: 96vw;
-  margin: 0 auto;
-}
-
-#biz-message p {
-  width: 100%;
-  text-align: center;
-  font-weight: bold;
-  letter-spacing: 3px;
-  font-size: 22px;
-}
-
-#biz-message p {
-  font-weight: bold;
-  letter-spacing: 3px;
-  font-size: 22px;
-  white-space: nowrap;
-}
-#biz-message p .wrap-delimiter {
-  display: none;
+  p {
+    max-width: 96vw;
+    margin: 0 auto;
+  }
 }
 
 .biz-header {
@@ -357,16 +360,11 @@ export default {
   overflow: hidden;
   height: 400px;
   width: 100%;
-}
-
-.biz-header-img img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-}
-
-.biz-header > img {
-  width: 100%;
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
 }
 
 .biz-header-title {
@@ -382,21 +380,21 @@ export default {
   box-shadow: 2px 2px 5px #000;
 }
 
-.biz-header-text p {
-  font-size: 32px;
-  color: $ene-green;
-  font-family: Arial, Helvetica, "sans-serif";
-  margin-bottom: 16px;
-}
-
-.biz-header-text h2 {
-  font-size: 32px;
-  margin-bottom: 16px;
-  letter-spacing: 3px;
-}
-
-.biz-header-text img {
-  width: 160px;
+.biz-header-text {
+  p {
+    font-size: 32px;
+    color: $ene-green;
+    font-family: Arial, Helvetica, "sans-serif";
+    margin-bottom: 16px;
+  }
+  h2 {
+    font-size: 32px;
+    margin-bottom: 16px;
+    letter-spacing: 3px;
+  }
+  img {
+    width: 160px;
+  }
 }
 
 article {
@@ -411,22 +409,20 @@ article {
 .scheme-text {
   width: 42%;
   padding: 0 46px;
+  h3 {
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 38px;
+    color: $ene-green;
+  }
+  p {
+    line-height: 24px;
+    margin-bottom: 28px;
+  }
 }
 
 .scheme-chart {
   width: 50%;
-}
-
-.scheme-text h3 {
-  font-weight: bold;
-  font-size: 24px;
-  margin-bottom: 38px;
-  color: $ene-green;
-}
-
-.scheme-text p {
-  line-height: 24px;
-  margin-bottom: 28px;
 }
 
 .partner {
@@ -435,6 +431,9 @@ article {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  img {
+    margin-bottom: 20px;
+  }
 }
 
 .ep,
@@ -442,10 +441,6 @@ article {
   width: 49%;
   background: #fff;
   text-align: center;
-}
-
-.partner img {
-  margin-bottom: 20px;
 }
 
 .partner p,
@@ -469,11 +464,10 @@ article {
   width: 100%;
   background-color: #fff;
   text-align: center;
-}
-
-.heisya img {
-  width: 260px;
-  margin-bottom: 20px;
+  img {
+    width: 260px;
+    margin-bottom: 20px;
+  }
 }
 
 #feature {
@@ -515,17 +509,15 @@ article {
   width: 64vw;
   margin: 0 auto;
   text-align: center;
-}
-
-.price p:first-child {
-  font-size: 22px;
-  font-weight: bold;
-  margin: 80px 0 20px;
-}
-
-.price p:nth-child(2) {
-  font-size: 16px;
-  margin: 0 0 40px;
+  &:first-child {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 80px 0 20px;
+  }
+  &:nth-child(2) {
+    font-size: 16px;
+    margin: 0 0 40px;
+  }
 }
 
 .price img {
@@ -537,15 +529,14 @@ article {
   height: 240px;
   margin: 60px 0 120px;
   position: relative;
-}
-
-.option p {
-  margin-top: 220px;
-  font-size: 16px;
-  line-height: 22px;
-  font-weight: bold;
-  width: 88%;
-  margin: 260px auto 20px;
+  p {
+    margin-top: 220px;
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: bold;
+    width: 88%;
+    margin: 260px auto 20px;
+  }
 }
 
 .product-container {
@@ -560,37 +551,32 @@ article {
   box-shadow: 2px 2px 5px #000;
   position: relative;
   padding: 2% 4%;
+  h4 {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 18px 0 10px;
+    color: $ene-green;
+  }
+  small {
+    font-size: 14px;
+    margin-left: 20px;
+  }
+  p {
+    line-height: 18px;
+    font-size: 14px;
+  }
 }
 
 .product-img {
   width: 15%;
   text-align: center;
+  img {
+    width: 100%;
+  }
 }
-
-.product-img img {
-  width: 100%;
-}
-
 .product-text {
   width: 80%;
   padding: 0 20px;
-}
-
-.product-container h4 {
-  font-size: 20px;
-  font-weight: bold;
-  margin: 18px 0 10px;
-  color: $ene-green;
-}
-
-.product-container small {
-  font-size: 14px;
-  margin-left: 20px;
-}
-
-.product-container p {
-  line-height: 18px;
-  font-size: 14px;
 }
 
 .papy {
@@ -618,15 +604,59 @@ article {
   margin: 0 auto;
   justify-content: space-between;
   padding: 30px 0;
+  @include tablet {
+    flex-direction: column-reverse;
+    height: auto;
+  }
+  &:nth-child(even) {
+    @include tablet {
+      flex-direction: column;
+    }
+  }
   .env-flex-content {
     width: 48%;
     float: left;
+    height: 100%;
+    @include tablet {
+      width: 100%;
+      padding: 2vw 8vw;
+    }
     &:first-of-type {
       float: right;
     }
     img {
       height: 100%;
+      @include tablet {
+        width: 100%;
+        height: auto;
+      }
     }
+    h4 {
+      color: $ene-green;
+      font-family: "Noto Sans JP";
+      font-weight: 900;
+      font-size: 20px;
+      line-height: 30px;
+    }
+    span {
+      font-size: 40px;
+      font-family: "Poppins", "arial";
+      position: relative;
+      top: 4px;
+    }
+  }
+  h3 {
+    color: black;
+    font-weight: 700;
+    font-size: 24px;
+    margin-top: 8px;
+  }
+  p {
+    font-family: "Noto Sans JP";
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 23px;
+    margin-top: 16px;
   }
 }
 
@@ -640,36 +670,6 @@ article {
 
 .env-flex .env-flex-content:last-of-type img {
   float: left;
-}
-
-.env-flex-content h4 {
-  color: $ene-green;
-  font-family: "Noto Sans JP";
-  font-weight: 900;
-  font-size: 20px;
-  line-height: 30px;
-}
-
-.env-flex-content h4 span {
-  font-size: 40px;
-  font-family: "Poppins", "arial";
-  position: relative;
-  top: 4px;
-}
-
-.env-flex h3 {
-  color: black;
-  font-weight: 700;
-  font-size: 24px;
-  margin-top: 8px;
-}
-
-.env-flex p {
-  font-family: "Noto Sans JP";
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 23px;
-  margin-top: 16px;
 }
 
 .goal-increase {
@@ -688,90 +688,38 @@ article {
 #simulation {
   margin-top: 40px;
   padding-bottom: 10px;
-}
-
-#simulation .wrapper .sim-header-container {
-  height: 35vw;
-  display: flex;
-  align-items: center;
-}
-
-#simulation .wrapper .sim-header-container .simulation-header {
-  height: 100%;
-}
-
-#simulation .wrapper .sim-header-container .simulation-header img {
-  width: 60vw;
-  height: 100%;
-  object-position: 0 center;
-  object-fit: cover;
-  top: 0;
-  left: 0;
-}
-
-#simulation .wrapper .sim-header-container .simulation-text {
-  transform: translate(-14vh, 0);
-  height: 100%;
-  display: flex;
-  align-items: center;
-}
-
-#simulation .wrapper .board {
-  width: 460px;
-  position: absolute;
-  z-index: 2;
-  padding: 40px 60px;
-  text-align: left;
-  margin-right: 0;
-  background-color: rgba(255, 255, 255, 0.9);
-  border-radius: 16px;
-  box-shadow: 4px 4px 8px rgba(0 0 0 / 40%);
-}
-
-#simulation .wrapper .board .catch-color {
-  padding: 5px 20px;
-  display: inline-block;
-  font-family: "Noto Sans JP";
-  font-weight: 700;
-  color: white;
-  font-size: 16px;
-  background-color: $ene-green;
-}
-#simulation .wrapper .board h4 {
-  font-family: "Noto Sans JP";
-  font-weight: 700;
-  font-size: 32px;
-  color: $ene-green;
-  letter-spacing: 0.1em;
-  margin: 16px 0;
-}
-#simulation .wrapper .board p {
-  font-family: "Noto Sans JP";
-  font-weight: 400;
-  font-size: 16px;
-  margin-bottom: 12px;
+  .wrapper {
+    .sim-header-container {
+      height: 35vw;
+      display: flex;
+      align-items: center;
+      .simulation-header {
+        height: 100%;
+        img {
+          width: 60vw;
+          height: 100%;
+          object-position: 0 center;
+          object-fit: cover;
+          top: 0;
+          left: 0;
+        }
+      }
+      .simulation-text {
+        transform: translate(-14vh, 0);
+        height: 100%;
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
 }
 .melit {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-}
-.melit .melit-img {
-  margin-right: 20px;
-}
-#simulation .wrapper .board .melit-text p {
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 30px;
-  margin: 0;
-}
-#simulation .wrapper .board .melit-text span {
-  font-size: 20px;
-  color: $ene-green;
-}
-#simulation .wrapper .board .melit-text .bold {
-  font-size: 36px;
-  line-height: 52px;
+  .melit-img {
+    margin-right: 20px;
+  }
 }
 
 #simulation .wrapper .data-title {
@@ -790,10 +738,9 @@ article {
   margin: 0 auto;
   gap: 4%;
   justify-content: space-between;
-}
-
-#data .data-container {
-  width: 48%;
+  .data-container {
+    width: 48%;
+  }
 }
 #simulation .wrapper #data .data-container .data-table {
   border-radius: 16px;
@@ -829,12 +776,12 @@ article {
 .supplement {
   max-width: 1000px;
   margin: 0 auto;
-}
-.supplement p {
-  font-size: 14px;
-  font-family: "Noto Sans JP";
-  line-height: 20px;
-  font-weight: 400;
+  p {
+    font-size: 14px;
+    font-family: "Noto Sans JP";
+    line-height: 20px;
+    font-weight: 400;
+  }
 }
 .sim-btn-container {
   margin: 50px auto 90px;
@@ -883,10 +830,9 @@ article {
 
 .sol-img {
   width: 60%;
-}
-
-.sol-img img {
-  width: 100%;
+  img {
+    width: 100%;
+  }
 }
 
 .sol-text-wrapper {
@@ -923,38 +869,42 @@ article {
   padding-top: 56.25%;
   position: relative;
   margin-bottom: 20px;
-}
-
-.iframe-wrapper iframe {
-  position: absolute;
-  top: 0;
-  width: 0;
-  width: 100%;
-  height: 100%;
+  iframe {
+    position: absolute;
+    top: 0;
+    width: 0;
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .sol-text-inner {
   width: 80%;
   height: 80%;
   margin: 4vw auto;
-}
-
-.sol-text-inner h3 {
-  font-size: 26px;
-  font-weight: bold;
-  margin-bottom: 2vw;
-  letter-spacing: 2px;
-}
-
-.sol-text-inner h4 {
-  font-size: 20px;
-  font-weight: bold;
-  margin: 10px 0;
-}
-
-.sol-text-inner h4 span {
-  color: $ene-green;
-  margin-right: 20px;
+  h3 {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 2vw;
+    letter-spacing: 2px;
+  }
+  h4 {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px 0;
+    span {
+      color: $ene-green;
+      margin-right: 20px;
+    }
+  }
+  img {
+    width: 320px;
+    margin: 10px 0 20px;
+  }
+  h5 {
+    line-height: 24px;
+    margin-bottom: 40px;
+  }
 }
 
 .sol-text-inner p {
@@ -975,16 +925,6 @@ article {
 
 #hyb .btn-container {
   margin-top: 0;
-}
-
-.sol-text-inner img {
-  width: 320px;
-  margin: 10px 0 20px;
-}
-
-.sol-text-inner h5 {
-  line-height: 24px;
-  margin-bottom: 40px;
 }
 
 #system {
@@ -1010,25 +950,22 @@ article {
   width: 60%;
   position: absolute;
   right: 0;
-}
-
-.system-text-inner h3 {
-  font-size: 28px;
-  font-weight: bold;
-  margin: 80px 0 30px;
-}
-
-.system-text-inner p {
-  line-height: 22px;
-  margin: 20px 0;
+  h3 {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 80px 0 30px;
+  }
+  p {
+    line-height: 22px;
+    margin: 20px 0;
+  }
 }
 
 .system-img {
   width: 50%;
-}
-
-.system-img img {
-  width: 100%;
+  img {
+    width: 100%;
+  }
 }
 
 .auto-wrapper {
@@ -1051,30 +988,25 @@ article {
   -webkit-box-shadow: 2px 2px 5px #000;
   box-shadow: 2px 2px 5px #000;
   height: 320px;
+  img {
+    width: 60%;
+  }
+  h4 {
+    font-size: 24px;
+    font-weight: bold;
+    width: 80%;
+    margin: 30px auto 20px;
+    span {
+      font-size: 16px;
+      margin-left: 10px;
+    }
+  }
+  p {
+    width: 80%;
+    margin: 20px auto 30px;
+    text-align: left;
+  }
 }
-
-.auto-content img {
-  width: 60%;
-}
-
-.auto-content h4 {
-  font-size: 24px;
-  font-weight: bold;
-  width: 80%;
-  margin: 30px auto 20px;
-}
-
-.auto-content h4 span {
-  font-size: 16px;
-  margin-left: 10px;
-}
-
-.auto-content p {
-  width: 80%;
-  margin: 20px auto 30px;
-  text-align: left;
-}
-
 @media screen and (max-width: 1600px) {
   .scheme-text h3 {
     font-size: 22px;
@@ -1175,21 +1107,8 @@ article {
 }
 
 @media screen and (max-width: 1200px) {
-  .env-flex {
-    flex-direction: column-reverse;
-    height: auto;
-  }
-
-  .env-flex:nth-of-type(odd) {
-    flex-direction: column;
-    height: auto;
-  }
-
   .pc-s-only {
     display: none;
-  }
-  .env-flex-content {
-    width: 100%;
   }
 
   .env-flex-content p {
@@ -1267,9 +1186,6 @@ article {
 
   #simulation .wrapper .sim-header-container .simulation-text {
     height: 300px;
-  }
-  #data {
-    flex-direction: column;
   }
 
   #data .data-container {
@@ -1557,17 +1473,28 @@ article {
 
 #simulation {
   #map {
-    width: 500px;
-    height: 500px;
+    width: 50%;
+    height: 50%;
   }
   .simulation-flex {
     display: flex;
     height: 600px;
+    @include pc-m {
+      height: auto;
+      flex-direction: column;
+    }
     .img-container {
       width: 50%;
+      @include pc-m {
+        height: 450px;
+        max-height: 50vw;
+      }
       .swiper-container {
         height: 100%;
         width: 120%;
+        @include pc-m {
+          width: 160%;
+        }
         .swiper-wrapper {
           height: 100%;
           width: 100%;
@@ -1581,6 +1508,11 @@ article {
     }
     .result-container {
       width: 50%;
+      position: relative;
+      @include pc-m {
+        width: 100%;
+        top: -60px;
+      }
       .swiper-container {
         width: 100%;
         height: 100%;
@@ -1589,6 +1521,9 @@ article {
           height: 100%;
           display: flex;
           align-items: center;
+          @include pc-m {
+            justify-content: center;
+          }
         }
       }
 
@@ -1601,6 +1536,10 @@ article {
         background-color: rgba(255, 255, 255, 0.9);
         border-radius: 16px;
         box-shadow: 4px 4px 8px rgb(0 0 0 / 40%);
+        @include sp{
+          max-width: 80%;
+          padding: 4vw;
+        }
         .catch-color {
           padding: 5px 20px;
           display: inline-block;
@@ -1610,6 +1549,11 @@ article {
           font-size: 16px;
           margin-bottom: 30px;
           background-color: $ene-green;
+          @include sp{
+            font-size: 14px;
+            padding: 4px 16px;
+            margin-bottom: 20px;
+          }
         }
         h4 {
           font-family: "Noto Sans JP";
@@ -1618,12 +1562,18 @@ article {
           color: $ene-green;
           letter-spacing: 0.1em;
           margin-bottom: 16px;
+          @include sp{
+            font-size: 24px;
+          }
         }
         p {
           font-family: "Noto Sans JP";
           font-weight: 400;
           font-size: 16px;
           margin-bottom: 12px;
+          @include sp{
+            font-size: 14px;
+          }
         }
         .melit {
           display: flex;
@@ -1639,14 +1589,24 @@ article {
               font-weight: 700;
               line-height: 30px;
               margin: 0;
+              @include sp{
+                font-size: 16px;
+              }
             }
             span {
               font-size: 20px;
               color: $ene-green;
+              @include sp{
+                font-size: 16px;
+              }
             }
             .bold {
               font-size: 36px;
               line-height: 52px;
+              @include sp{
+                font-size: 28px;
+                line-height: 40px;
+              }
             }
           }
         }
@@ -1659,9 +1619,15 @@ article {
     .swiper-slide {
       display: flex;
       justify-content: space-between;
+      @include tablet {
+        flex-direction: column;
+      }
       .data-container {
         background-color: white;
         width: 48%;
+        @include tablet {
+          width: 100%;
+        }
         #equipment {
           margin-bottom: 20px;
         }

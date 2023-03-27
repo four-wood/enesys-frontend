@@ -45,14 +45,28 @@
 @use "@/assets/css/resources.scss" as *;
 #reason {
   margin-top: 80px;
+  @include sp{
+    margin: 60px auto;
+  }
   .reason-container {
     display: flex;
     height: 500px;
     background-color: white;
+    @include tablet{
+      height: auto;
+      flex-direction: column;
+    }
     &:nth-of-type(odd) {
       flex-direction: row-reverse;
+      @include tablet{
+        height: auto;
+        flex-direction: column;
+      }
       .reason-text-inner{
         margin-left: auto;
+        @include tablet{
+          width: 100%;
+        }
       }
     }
   }
@@ -66,6 +80,9 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+    }
+    @include tablet{
+      height: 65vw;
     }
   }
   .reason-text {
@@ -82,6 +99,9 @@
       line-height: 22px;
       font-size: 16px;
       letter-spacing: 0.1em;
+      @include sp{
+        font-size: 15px;
+      }
     }
   }
 }
@@ -89,9 +109,9 @@
 .reason-text-inner {
   max-width: 600px;
   padding: 30px;
-  @include pc-l{
+  @include tablet{
     max-width: none;
-    width: 28vw;
+    padding: 4vw;
   }
 }
 
@@ -102,6 +122,9 @@
     font-size: 32px;
     line-height: 1.3;
     color: $text-black;
+    @include sp{
+      font-size: 24px;
+    }
   }
 }
 </style>

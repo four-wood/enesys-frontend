@@ -12,7 +12,7 @@
             ></div>
             <img src="~/assets/img/selector_bg_solar.jpg" alt="" />
             <p :class="{ 'text-gray': !isSolar }">
-              太陽光ソリューション事業<br />に関するお問い合わせ
+              太陽光<span class="fold">ソリューション事業</span><span class="fold">に関する</span><span class="fold">お問い合わせ</span>
             </p>
           </div>
         </div>
@@ -310,6 +310,11 @@ export default {
 </script>
 <style lang="scss" scoped>
 @use "@/assets/css/resources.scss" as *;
+#mail{
+  max-width: 96%;
+  margin-left: auto;
+  margin-right: auto;
+}
 #mail-form {
   margin-top: 120px;
   padding-bottom: 120px;
@@ -407,8 +412,11 @@ export default {
     margin-bottom: 8px;
   }
   .required-tag {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-left: 16px;
-    padding: 2px;
+    padding: 3px;
     font-size: 14px;
     background-color: $ene-green;
     color: white;
@@ -416,9 +424,9 @@ export default {
     @include sp {
       position: relative;
       top: 2px;
-      font-size: 12px;
-      height: 24px;
-      width: 48px;
+      font-size: 13px;
+      height: 20px;
+      width: 40px;
     }
   }
 }
@@ -494,6 +502,12 @@ export default {
   border-radius: 10px;
   margin: 40px auto;
   display: flex;
+  @include tablet{
+    height: 250px;
+  }
+  @include sp{
+    height: 200px;
+  }
   .category-container {
     width: 50%;
     height: 100%;
@@ -517,9 +531,15 @@ export default {
       p {
         font-size: 24px;
         font-weight: bold;
-        line-height: 30px;
+        line-height: 1.2;
         color: white;
         text-align: center;
+        @include tablet{
+          font-size: 20px;
+        }
+        @include sp{
+          font-size: 16px;
+        }
       }
       .text-gray {
         color: gray;

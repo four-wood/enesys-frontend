@@ -36,8 +36,7 @@ export default {
   mounted() {
     if (this.content != "") {
       this.hasContent = true;
-      console.log(this.content)
-      this.$refs.content.insertAdjacentHTML('beforeend',this.content);
+      this.$refs.content.insertAdjacentHTML("beforeend", this.content);
     }
   },
 };
@@ -49,9 +48,16 @@ export default {
   border-bottom: 1px solid $ene-green;
   tr {
     width: 100%;
+    @include sp{
+      display: flex;
+      flex-direction: column;
+    }
     td {
       text-align: left;
       padding: 32px 0;
+      @include sp{
+        padding: 16px;
+      }
       &:first-of-type {
         padding-right: 40px;
       }
@@ -65,6 +71,9 @@ export default {
       .news-title-container {
         display: flex;
         justify-content: space-between;
+        p {
+          max-width: calc(100% - 40px);
+        }
         .chevron-container {
           margin-right: 20px;
           width: 20px;
@@ -76,6 +85,7 @@ export default {
         }
       }
     }
+
     &:hover {
       cursor: pointer;
       .news-title-container {

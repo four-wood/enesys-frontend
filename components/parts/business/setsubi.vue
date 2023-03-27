@@ -50,18 +50,22 @@ export default {
           delay: 4000,
         },
         speed: 1000,
-        slidesPerView: 1.5,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
+        slidesPerView: 1.3,
+        centeredSlides: true,
         slideToClickedSlide: true,
+        breakpoints: {
+          768: {
+            slidesPerView: 1.5,
+            centeredSlides: false,
+          },
+        },
       },
       swiperTop2: {
         loop: true,
         effect: "fade",
         allowTouchMove: false,
       },
+      
     };
   },
 };
@@ -98,25 +102,44 @@ export default {
       display: flex;
       height: 100%;
       width: 100%;
+      @include sp{
+        flex-direction: column;
+      }
       .setsubi-description {
         width: 50%;
         height: 100%;
         padding: 10% 6% 0;
+        @include sp{
+          width: 100%;
+          margin-bottom: 30px;
+        }
         h3 {
           font-size: 24px;
           color: $ene-green;
           margin-bottom: 16px;
+          @include sp{
+            font-size: 18px;
+          }
         }
         p {
           line-height: 1.4;
           font-size: 18px;
+          @include sp{
+            font-size: 15px;
+          }
         }
       }
       .setsubi-introduction {
         width: 50%;
         height: 100%;
+        @include sp{
+          width: 100%;
+        }
         .swiper-slide {
           padding: 20px;
+          @include sp{
+            padding: 3vw;
+          }
           img {
             height: 50%;
             width: 100%;
@@ -125,21 +148,37 @@ export default {
           .text-container {
             height: 50%;
             padding: 20px;
+            opacity: 0;
+            transition: 0.6s opacity ease;
+            @include sp{
+              padding: 4vw 0;
+            }
             h4 {
               font-size: 24px;
               margin-bottom: 20px;
               border-left: 4px solid $ene-green;
               padding-left: 10px;
+              @include sp{
+                font-size: 18px;
+              }
             }
             .title {
               font-size: 16px;
               font-weight: bold;
               line-height: 20px;
+              @include sp{
+                font-size: 15px;
+              }
             }
             p {
               font-size: 15px;
               margin-bottom: 16px;
             }
+          }
+        }
+        .swiper-slide-active{
+          .text-container{
+            opacity: 1;
           }
         }
       }

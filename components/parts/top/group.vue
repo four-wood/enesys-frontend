@@ -335,9 +335,9 @@ export default {
 #group {
   max-width: 1200px;
   margin: 100px auto;
-  @include pc-l {
+  @include tablet {
     margin: 60px auto 20px;
-    padding: 0 4%;
+    padding: 0 4vw;
   }
   .group-title-container {
     margin-bottom: 20px;
@@ -368,12 +368,12 @@ export default {
     .group-slide-container {
       display: flex;
       width: 100%;
-      @include pc-l {
+      @include tablet {
         flex-direction: column;
       }
       img {
         width: 60%;
-        @include pc-l {
+        @include tablet {
           width: 100%;
         }
       }
@@ -381,7 +381,7 @@ export default {
         margin-left: 20px;
         width: 40%;
         background-color: white;
-        @include pc-l {
+        @include tablet {
           margin: 0;
           width: 100%;
           height: 360px;

@@ -82,11 +82,17 @@
           border-bottom: 1px solid $gray;
           td {
             padding: 30px 50px;
+            @include sp{
+              padding: 3vw 2vw;
+            }
             p {
               font-size: 18px;
               line-height: 1.3;
               font-weight: bold;
               color: $text-black;
+              @include sp{
+                font-size: 14px;
+              }
             }
             .space {
               margin-bottom: 20px;
