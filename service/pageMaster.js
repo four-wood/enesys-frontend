@@ -8,7 +8,7 @@ const PAGE = {
     contents: {
       topMessage: {
         contentName: "代表挨拶",
-        contentLink: "about",
+        contentLink: "message",
       },
       companyProfile: {
         contentName: "企業概要",
